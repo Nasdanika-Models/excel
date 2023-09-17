@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.models.excel/src/main/java" creationIcons="false"
+    editorDirectory="" modelPluginID="org.nasdanika.models.excel" modelName="Excel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    featureDelegation="Dynamic" complianceLevel="17.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>excel.ecore</foreignModel>
+  <genPackages prefix="Excel" basePackage="org.nasdanika.models" disposableProviderFactory="true"
+      ecorePackage="excel.ecore#/">
+    <genClasses ecoreClass="excel.ecore#//Workbook">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//Workbook/sheets"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="excel.ecore#//Sheet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//Sheet/name"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//RowSheet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//RowSheet/rows"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//ListSheet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//ListSheet/contents"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="excel.ecore#//Row">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//Row/number"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//CellRow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//CellRow/cells"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//EObjectRow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//EObjectRow/contents"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//ListRow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//ListRow/contents"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//Cell">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//Cell/columnIndex"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//BlankCell"/>
+    <genClasses ecoreClass="excel.ecore#//BooleanCell">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//BooleanCell/value"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//DateCell">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//DateCell/value"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//ErrorCell">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//ErrorCell/value"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//NumericCell">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//NumericCell/value"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//StringCell">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//StringCell/value"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//EObjectCell">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//EObjectCell/value"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//ReferenceCell">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference excel.ecore#//ReferenceCell/target"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
