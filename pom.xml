@@ -6,6 +6,20 @@
 	<version>2023.9.0</version>
 	<packaging>pom</packaging>
 	<name>MS Excel model, processors, doc generator</name>
+	<description>Loading of data from MS Excel to Ecore models</description>
+	<url>https://github.com/Nasdanika-Models/excel</url>
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License 2.0</name>
+			<url>https://nasdanika.org/builds/master/eclipse-public-license-2.0.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/Nasdanika-Models/excel</url>
+	</scm>
 
 	<properties>
 		<core.version>2023.9.1</core.version>
@@ -17,6 +31,13 @@
 	</properties>	
 
 	<build>
+	    <extensions>
+	      <extension>
+	        <groupId>org.apache.maven.wagon</groupId>
+	         <artifactId>wagon-ssh</artifactId>
+	         <version>3.5.3</version>
+	      </extension>
+	    </extensions>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -26,21 +47,123 @@
 					<source>17</source>
 					<target>17</target>
 				</configuration>
-			</plugin>		
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>4.0.0-M9</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.3.0</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		        <plugin>
 		            <groupId>org.apache.maven.plugins</groupId>
-	        	    <artifactId>maven-surefire-plugin</artifactId>
+		            <artifactId>maven-surefire-plugin</artifactId>
 		            <version>3.1.2</version>
 		            <dependencies>
-	        	        <dependency>
-	                	    <groupId>org.junit.jupiter</groupId>
+		                <dependency>
+		                    <groupId>org.junit.jupiter</groupId>
 		                    <artifactId>junit-jupiter-engine</artifactId>
 		                    <version>5.10.0</version>
-	        	        </dependency>
+		                </dependency>
 		            </dependencies>
 		        </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.5.0</version>
+			
+				<executions>
+					<execution>
+						<id>aggregate</id>
+						<goals>
+							<goal>aggregate</goal>
+						</goals>
+						<configuration>
+							<failOnError>false</failOnError>
+							<additionalOptions>-Xdoclint:none</additionalOptions>
+							<additionalOptions><![CDATA[--allow-script-in-comments]]></additionalOptions>
+							<linksource>true</linksource>	
+			        			<useStandardDocletOptions>true</useStandardDocletOptions>
+							<links>
+								<link>https://download.eclipse.org/modeling/emf/emf/javadoc/2.11/</link>
+								<link>https://picocli.info/apidocs/</link>
+							</links>
+							<header>
+								<![CDATA[
+								      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+								      <script>
+								        window.dataLayer = window.dataLayer || [];
+								        function gtag(){dataLayer.push(arguments);}
+								        gtag('js', new Date());
+      
+								        gtag('config', 'G-9BRJVLK8CC');
+								      </script>    
+								]]>
+							</header>
+						</configuration>
+					</execution>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<failOnError>false</failOnError>
+							<additionalOptions>-Xdoclint:none</additionalOptions>
+							<additionalOptions><![CDATA[--allow-script-in-comments]]></additionalOptions>
+							<linksource>true</linksource>	
+			        			<useStandardDocletOptions>true</useStandardDocletOptions>
+							<links>
+								<link>https://download.eclipse.org/modeling/emf/emf/javadoc/2.11/</link>
+								<link>https://picocli.info/apidocs/</link>
+							</links>
+							<header>
+								<![CDATA[
+								      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
+								      <script>
+								        window.dataLayer = window.dataLayer || [];
+								        function gtag(){dataLayer.push(arguments);}
+								        gtag('js', new Date());
+      
+								        gtag('config', 'G-9BRJVLK8CC');
+								      </script>    
+								]]>
+							</header>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
+	<organization>
+		<name>Nasdanika</name>
+		<url>https://nasdanika.org</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>pvlasov</id>
+			<name>Pavel Vlasov</name>
+			<email>Pavel.Vlasov@nasdanika.org</email>
+			<roles>
+				<role>Lead Developer</role>
+			</roles>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+
 	<dependencies>
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
@@ -52,8 +175,56 @@
 
 	<modules>
 		<module>model</module>
+		<!--
 		<module>processors</module>
 		<module>generator</module>
+		-->
 	</modules>
+
+	 <profiles>
+		<profile>
+			<id>ossrh</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>3.1.0</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>	
+					<plugin>
+						<groupId>org.sonatype.plugins</groupId>
+						<artifactId>nexus-staging-maven-plugin</artifactId>
+						<version>1.6.13</version>
+						<extensions>true</extensions>
+						<configuration>
+							<serverId>ossrh</serverId>
+							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
+						</configuration>
+					</plugin>								
+				</plugins>
+			</build>
+			<distributionManagement>
+				<repository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+				</repository>
+				<snapshotRepository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+				</snapshotRepository>
+			</distributionManagement>	
+		</profile>
+	</profiles>
+
 </project>
 
