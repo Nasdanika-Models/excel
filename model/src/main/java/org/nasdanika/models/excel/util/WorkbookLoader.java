@@ -22,7 +22,7 @@ import org.nasdanika.models.excel.Workbook;
 /**
  * Loads the Excel model from a workbook stream
  */
-public class Loader {
+public class WorkbookLoader {
 	
 	private ExcelFactory factory;
 	
@@ -30,11 +30,11 @@ public class Loader {
 		return workbook.getCreationHelper().createFormulaEvaluator();
 	};
 
-	public Loader() {
+	public WorkbookLoader() {
 		this(ExcelFactory.eINSTANCE);
 	}
 	
-	public Loader(ExcelFactory factory) {
+	public WorkbookLoader(ExcelFactory factory) {
 		this.factory = factory;
 	}
 	

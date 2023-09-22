@@ -27,12 +27,12 @@ public interface Row extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number</em>' attribute.
-	 * @see #setNumber(int)
+	 * @see #setNumber(long)
 	 * @see org.nasdanika.models.excel.ExcelPackage#getRow_Number()
 	 * @model
 	 * @generated
 	 */
-	int getNumber();
+	long getNumber();
 
 	/**
 	 * Sets the value of the '{@link org.nasdanika.models.excel.Row#getNumber <em>Number</em>}' attribute.
@@ -42,5 +42,5 @@ public interface Row extends EObject {
 	 * @see #getNumber()
 	 * @generated
 	 */
-	void setNumber(int value);
+	void setNumber(long value);
 } // Row

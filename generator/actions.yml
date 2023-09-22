@@ -20,4 +20,9 @@ app-action:
           content-interpolator:
             source:
               content-resource: classpath://org/nasdanika/html/model/app/gen/semantic-info.html
+  navigation:
+    - app-action:
+        location: https://github.com/Nasdanika-Models/excel
+        icon: fab fa-github
+        text: Sources
           

@@ -31,7 +31,7 @@ public abstract class RowImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUMBER_EDEFAULT = 0;
+	protected static final long NUMBER_EDEFAULT = 0L;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,8 +68,8 @@ public abstract class RowImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated
 	 */
 	@Override
-	public int getNumber() {
-		return (Integer)eDynamicGet(ExcelPackage.ROW__NUMBER, ExcelPackage.Literals.ROW__NUMBER, true, true);
+	public long getNumber() {
+		return (Long)eDynamicGet(ExcelPackage.ROW__NUMBER, ExcelPackage.Literals.ROW__NUMBER, true, true);
 	}
 
 	/**
@@ -78,7 +78,7 @@ public abstract class RowImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated
 	 */
 	@Override
-	public void setNumber(int newNumber) {
+	public void setNumber(long newNumber) {
 		eDynamicSet(ExcelPackage.ROW__NUMBER, ExcelPackage.Literals.ROW__NUMBER, newNumber);
 	}
 
@@ -105,7 +105,7 @@ public abstract class RowImpl extends MinimalEObjectImpl.Container implements Ro
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ExcelPackage.ROW__NUMBER:
-				setNumber((Integer)newValue);
+				setNumber((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

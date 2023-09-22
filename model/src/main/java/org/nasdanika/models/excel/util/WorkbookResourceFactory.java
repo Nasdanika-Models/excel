@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.nasdanika.models.excel.Workbook;
 
 /**
- * Creates resources loading data from MS Excel using provided {@link Loader}. 
+ * Creates resources loading data from MS Excel using provided {@link WorkbookLoader}. 
  * @author Pavel
  *
  */
-public class ExcelResourceFactory extends ResourceFactoryImpl {
+public class WorkbookResourceFactory extends ResourceFactoryImpl {
 	
 	@Override
 	public Resource createResource(URI uri) {
@@ -30,8 +30,8 @@ public class ExcelResourceFactory extends ResourceFactoryImpl {
 		};
 	}
 
-	protected Loader getLoader(Resource resource) {
-		return new Loader();
+	protected WorkbookLoader getLoader(Resource resource) {
+		return new WorkbookLoader();
 	}
 		
 }

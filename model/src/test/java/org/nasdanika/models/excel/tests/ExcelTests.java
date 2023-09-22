@@ -4,7 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.InputStream;
+import java.io.Reader;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -19,14 +21,16 @@ import org.nasdanika.models.excel.RowSheet;
 import org.nasdanika.models.excel.Sheet;
 import org.nasdanika.models.excel.StringCell;
 import org.nasdanika.models.excel.Workbook;
-import org.nasdanika.models.excel.util.ExcelResourceFactory;
-import org.nasdanika.models.excel.util.Loader;
+import org.nasdanika.models.excel.util.CSVLoader;
+import org.nasdanika.models.excel.util.CSVResourceFactory;
+import org.nasdanika.models.excel.util.WorkbookLoader;
+import org.nasdanika.models.excel.util.WorkbookResourceFactory;
 
 public class ExcelTests {
 	
 	@Test
-	public void testLoader() throws Exception {
-		Loader loader = new Loader();
+	public void testWorkbookLoader() throws Exception {
+		WorkbookLoader loader = new WorkbookLoader();
 		File in = new File("test.xlsx");
 		assertTrue(in.isFile());
 		try (InputStream is = new FileInputStream(in)) {
@@ -45,12 +49,55 @@ public class ExcelTests {
 			}
 		}
 	}
+	
+	@Test
+	public void testCSVLoader() throws Exception {
+		CSVLoader loader = new CSVLoader();
+		File in = new File("test.csv");
+		assertTrue(in.isFile());
+		try (Reader reader = new FileReader(in)) {
+			Workbook workbook = loader.load(reader);
+			for (Sheet sheet: workbook.getSheets()) {
+				System.out.println(sheet.getName() + " " + sheet.eClass().getName());
+				for (Row row: ((RowSheet) sheet).getRows()) {
+					System.out.println("\t" + row.getNumber() + " " + row.eClass().getName());
+					for (Cell cell: ((CellRow) row).getCells()) {
+						System.out.println("\t\t" + cell.getColumnIndex() + " " + cell.eClass().getName());
+						if (cell instanceof StringCell) {
+							System.out.println("\t\t\t" + ((StringCell) cell).getValue());
+						}
+					}					
+				}
+			}
+		}
+	}
 
 	@Test
-	public void testResourceFactory() throws Exception {
+	public void testWorkbookResourceFactory() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new ExcelResourceFactory());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory());
 		File test = new File("test.xlsx").getCanonicalFile();
+		Resource excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
+		for (EObject root: excelResource.getContents()) {
+			Sheet sheet = (Sheet) root;
+			System.out.println(sheet.getName() + " " + sheet.eClass().getName());
+			for (Row row: ((RowSheet) sheet).getRows()) {
+				System.out.println("\t" + row.getNumber() + " " + row.eClass().getName());
+				for (Cell cell: ((CellRow) row).getCells()) {
+					System.out.println("\t\t" + cell.getColumnIndex() + " " + cell.eClass().getName());
+					if (cell instanceof StringCell) {
+						System.out.println("\t\t\t" + ((StringCell) cell).getValue());
+					}
+				}					
+			}
+		}
+	}
+
+	@Test
+	public void testCSVResourceFactory() throws Exception {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("csv", new CSVResourceFactory());
+		File test = new File("test.csv").getCanonicalFile();
 		Resource excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
 		for (EObject root: excelResource.getContents()) {
 			Sheet sheet = (Sheet) root;
