@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 import org.nasdanika.models.excel.Workbook;
 
 /**
- * Creates resources loading data from MS Excel using provided {@link WorkbookLoader}. 
+ * Creates resources loading data from MS Excel using provided {@link XSSWorkbookLoader}. 
  * @author Pavel
  *
  */
@@ -24,14 +24,26 @@ public class WorkbookResourceFactory extends ResourceFactoryImpl {
 			@Override
 			protected void doLoad(InputStream inputStream, Map<?, ?> options) throws IOException {
 				Workbook workbook = getLoader(this).load(inputStream);
-				getContents().addAll(workbook.getSheets());
+				loadContents(workbook, this);
 			}
 			
 		};
 	}
+	
+	/**
+	 * Override to customize, e.g. transform the workbook to something else
+	 * @param workbook
+	 * @param resource
+	 */
+	protected void loadContents(Workbook workbook, Resource resource) {
+		resource.getContents().addAll(workbook.getSheets());		
+	}
 
 	protected WorkbookLoader getLoader(Resource resource) {
-		return new WorkbookLoader();
+		if (resource.getURI().toString().toLowerCase().endsWith(".csv")) {
+			return new CSVLoader();
+		}
+		return new XSSWorkbookLoader();
 	}
 		
 }
