@@ -8,4 +8,5 @@ module org.nasdanika.models.excel {
 	requires transitive org.apache.poi.ooxml;
 	requires org.apache.commons.csv;
 	requires org.nasdanika.common;
+	requires transitive org.nasdanika.exec;
 }

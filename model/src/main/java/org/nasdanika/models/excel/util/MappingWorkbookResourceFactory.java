@@ -18,6 +18,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.nasdanika.common.DefaultConverter;
 import org.nasdanika.common.Util;
+import org.nasdanika.exec.content.ContentFactory;
+import org.nasdanika.exec.content.Interpolator;
+import org.nasdanika.exec.content.Markdown;
+import org.nasdanika.exec.content.Text;
 import org.nasdanika.models.excel.BooleanCell;
 import org.nasdanika.models.excel.Cell;
 import org.nasdanika.models.excel.CellRow;
@@ -387,5 +391,31 @@ public abstract class MappingWorkbookResourceFactory extends WorkbookResourceFac
 		
 		return Objects.requireNonNull(DefaultConverter.INSTANCE.convert(value, type), "Cannot convert " + value + " to " + type);
 	}
+	
+
+	// --- Convenience methods ---
+	
+	protected EObject createHtmlDoc(String doc) {
+		Text text = ContentFactory.eINSTANCE.createText(); // Interpolate with element properties?
+		text.setContent(doc);
+		return text;
+	}
+
+	protected EObject createTextDoc(String doc) {
+		return createHtmlDoc("<PRE>" + System.lineSeparator() + doc + System.lineSeparator() + "</PRE>");
+	}
+
+	protected EObject createMarkdownDoc(String doc) {
+		Markdown ret = ContentFactory.eINSTANCE.createMarkdown();
+		Interpolator interpolator = ContentFactory.eINSTANCE.createInterpolator();
+		Text text = ContentFactory.eINSTANCE.createText(); // Interpolate with element properties?
+		text.setContent(doc);
+		interpolator.setSource(text);
+		ret.setSource(interpolator);
+		ret.setStyle(true);
+		
+		return ret;
+	}
+	
 
 }
