@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.util.Calendar;
+import java.util.Date;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.jupiter.api.Test;
 import org.nasdanika.models.excel.Cell;
 import org.nasdanika.models.excel.CellRow;
+import org.nasdanika.models.excel.ExcelFactory;
 import org.nasdanika.models.excel.Row;
 import org.nasdanika.models.excel.RowSheet;
 import org.nasdanika.models.excel.Sheet;
@@ -70,7 +73,7 @@ public class ExcelTests {
 	}
 
 	@Test
-	public void testXSSWorkbookResource() throws Exception {
+	public void testLoadXSSWorkbookResource() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory());
 		File test = new File("test.xlsx").getCanonicalFile();
@@ -89,9 +92,40 @@ public class ExcelTests {
 			}
 		}
 	}
-
+	
 	@Test
-	public void testCSVResource() throws Exception {
+	public void testSaveXSSWorkbookResource() throws Exception {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory());
+		File test = new File("target/test.xlsx").getCanonicalFile();
+		Resource excelResource = resourceSet.createResource(URI.createFileURI(test.getAbsolutePath()));
+		Workbook workbook = ExcelFactory.eINSTANCE.createWorkbook();
+		excelResource.getContents().add(workbook);
+		RowSheet rowSheet = workbook.addRowSheet("My worksheet");
+		CellRow headerRow = rowSheet.addCellRow();
+		headerRow.addStringCell("Blank");
+		headerRow.addStringCell("Boolean");
+		headerRow.addStringCell("Date");
+		headerRow.addStringCell("Error");
+		headerRow.addStringCell("Numeric");
+		headerRow.addStringCell("String");
+		
+		CellRow dataRow = rowSheet.addCellRow();
+		dataRow.addBlankCell();
+		dataRow.addBooleanCell(true);
+		
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(2013, 8, 10, 9, 0);
+		dataRow.addDateCell(calendar.getTime());
+		dataRow.addErrorCell((byte) 33);
+		dataRow.addNumericCell(33);
+		dataRow.addStringCell("Hello world!");
+		
+		excelResource.save(null);
+	}
+	
+	@Test
+	public void testLoadCSVResource() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("csv", new WorkbookResourceFactory());
 		File test = new File("test.csv").getCanonicalFile();
@@ -110,5 +144,37 @@ public class ExcelTests {
 			}
 		}
 	}
+	
+	@Test
+	public void testSaveCSVWorkbookResource() throws Exception {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("csv", new WorkbookResourceFactory());
+		File test = new File("target/test.csv").getCanonicalFile();
+		Resource excelResource = resourceSet.createResource(URI.createFileURI(test.getAbsolutePath()));
+		Workbook workbook = ExcelFactory.eINSTANCE.createWorkbook();
+		excelResource.getContents().add(workbook);
+		RowSheet rowSheet = workbook.addRowSheet("My worksheet");
+		CellRow headerRow = rowSheet.addCellRow();
+		headerRow.addStringCell("Blank");
+		headerRow.addStringCell("Boolean");
+		headerRow.addStringCell("Date");
+		headerRow.addStringCell("Error");
+		headerRow.addStringCell("Numeric");
+		headerRow.addStringCell("String");
+		
+		CellRow dataRow = rowSheet.addCellRow();
+		dataRow.addBlankCell();
+		dataRow.addBooleanCell(true);
+		
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(2013, 8, 10, 9, 0);
+		dataRow.addDateCell(calendar.getTime());
+		dataRow.addErrorCell((byte) 33);
+		dataRow.addNumericCell(33);
+		dataRow.addStringCell("Hello world!");
+		
+		excelResource.save(null);
+	}
+	
 	
 }

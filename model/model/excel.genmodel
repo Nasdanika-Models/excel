@@ -10,12 +10,16 @@
       ecorePackage="excel.ecore#/">
     <genClasses ecoreClass="excel.ecore#//Workbook">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//Workbook/sheets"/>
+      <genOperations ecoreOperation="excel.ecore#//Workbook/addRowSheet">
+        <genParameters ecoreParameter="excel.ecore#//Workbook/addRowSheet/name"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="excel.ecore#//Sheet">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//Sheet/name"/>
     </genClasses>
     <genClasses ecoreClass="excel.ecore#//RowSheet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//RowSheet/rows"/>
+      <genOperations ecoreOperation="excel.ecore#//RowSheet/addCellRow"/>
     </genClasses>
     <genClasses ecoreClass="excel.ecore#//ListSheet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//ListSheet/contents"/>
@@ -25,6 +29,28 @@
     </genClasses>
     <genClasses ecoreClass="excel.ecore#//CellRow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//CellRow/cells"/>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addBlankCell"/>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addBooleanCell">
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addBooleanCell/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addDateCell">
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addDateCell/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addEObjectCell">
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addEObjectCell/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addErrorCell">
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addErrorCell/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addNumericCell">
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addNumericCell/value"/>
+      </genOperations>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addReferenceCell">
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addReferenceCell/target"/>
+      </genOperations>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addStringCell">
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addStringCell/value"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="excel.ecore#//EObjectRow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//EObjectRow/contents"/>

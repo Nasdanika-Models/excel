@@ -2,20 +2,18 @@
  */
 package org.nasdanika.models.excel.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.nasdanika.models.excel.ExcelFactory;
 import org.nasdanika.models.excel.ExcelPackage;
+import org.nasdanika.models.excel.RowSheet;
 import org.nasdanika.models.excel.Sheet;
 import org.nasdanika.models.excel.Workbook;
 
@@ -71,6 +69,19 @@ public class WorkbookImpl extends MinimalEObjectImpl.Container implements Workbo
 	@Override
 	public EList<Sheet> getSheets() {
 		return (EList<Sheet>)eDynamicGet(ExcelPackage.WORKBOOK__SHEETS, ExcelPackage.Literals.WORKBOOK__SHEETS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public RowSheet addRowSheet(String name) {
+		RowSheet rowSheet = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createRowSheet();
+		getSheets().add(rowSheet);
+		rowSheet.setName(name);
+		return rowSheet;
 	}
 
 	/**
@@ -145,6 +156,20 @@ public class WorkbookImpl extends MinimalEObjectImpl.Container implements Workbo
 				return !getSheets().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ExcelPackage.WORKBOOK___ADD_ROW_SHEET__STRING:
+				return addRowSheet((String)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //WorkbookImpl

@@ -1,15 +1,14 @@
 package org.nasdanika.models.excel.util;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 
+import org.apache.poi.ss.usermodel.DateUtil;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -381,12 +380,7 @@ public abstract class MappingWorkbookResourceFactory extends WorkbookResourceFac
 			return null;
 		}
 		if (value instanceof Double && Date.class.equals(type)) {
-			Calendar calendar = Calendar.getInstance();
-			calendar.set(1900, 0, 0);
-			long baseMillis = calendar.getTimeInMillis();
-			long millisInADay = TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS);
-			long mills = (long) (((double) value) - 1.0) * millisInADay + baseMillis;
-			return (T) new Date(mills);
+			return (T) DateUtil.getJavaDate((double) value);
 		}
 		
 		return Objects.requireNonNull(DefaultConverter.INSTANCE.convert(value, type), "Cannot convert " + value + " to " + type);

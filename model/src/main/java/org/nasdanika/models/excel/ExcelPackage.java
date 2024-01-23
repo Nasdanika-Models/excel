@@ -4,6 +4,7 @@ package org.nasdanika.models.excel;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -85,13 +86,22 @@ public interface ExcelPackage extends EPackage {
 	int WORKBOOK_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Add Row Sheet</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORKBOOK___ADD_ROW_SHEET__STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Workbook</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORKBOOK_OPERATION_COUNT = 0;
+	int WORKBOOK_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.excel.impl.SheetImpl <em>Sheet</em>}' class.
@@ -168,13 +178,22 @@ public interface ExcelPackage extends EPackage {
 	int ROW_SHEET_FEATURE_COUNT = SHEET_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Add Cell Row</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROW_SHEET___ADD_CELL_ROW = SHEET_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Row Sheet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROW_SHEET_OPERATION_COUNT = SHEET_OPERATION_COUNT + 0;
+	int ROW_SHEET_OPERATION_COUNT = SHEET_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.excel.impl.ListSheetImpl <em>List Sheet</em>}' class.
@@ -297,13 +316,85 @@ public interface ExcelPackage extends EPackage {
 	int CELL_ROW_FEATURE_COUNT = ROW_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Add Blank Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_BLANK_CELL = ROW_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Add Boolean Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_BOOLEAN_CELL__BOOLEAN = ROW_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Add Date Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_DATE_CELL__DATE = ROW_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Add EObject Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_EOBJECT_CELL__EOBJECT = ROW_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Add Error Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_ERROR_CELL__BYTE = ROW_OPERATION_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Add Numeric Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_NUMERIC_CELL__DOUBLE = ROW_OPERATION_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Add Reference Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_REFERENCE_CELL__EOBJECT = ROW_OPERATION_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Add String Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_STRING_CELL__STRING = ROW_OPERATION_COUNT + 7;
+
+	/**
 	 * The number of operations of the '<em>Cell Row</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CELL_ROW_OPERATION_COUNT = ROW_OPERATION_COUNT + 0;
+	int CELL_ROW_OPERATION_COUNT = ROW_OPERATION_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.excel.impl.EObjectRowImpl <em>EObject Row</em>}' class.
@@ -817,6 +908,16 @@ public interface ExcelPackage extends EPackage {
 	EReference getWorkbook_Sheets();
 
 	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.Workbook#addRowSheet(java.lang.String) <em>Add Row Sheet</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Row Sheet</em>' operation.
+	 * @see org.nasdanika.models.excel.Workbook#addRowSheet(java.lang.String)
+	 * @generated
+	 */
+	EOperation getWorkbook__AddRowSheet__String();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.excel.Sheet <em>Sheet</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -857,6 +958,16 @@ public interface ExcelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRowSheet_Rows();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.RowSheet#addCellRow() <em>Add Cell Row</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Cell Row</em>' operation.
+	 * @see org.nasdanika.models.excel.RowSheet#addCellRow()
+	 * @generated
+	 */
+	EOperation getRowSheet__AddCellRow();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.excel.ListSheet <em>List Sheet</em>}'.
@@ -920,6 +1031,86 @@ public interface ExcelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCellRow_Cells();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addBlankCell() <em>Add Blank Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Blank Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addBlankCell()
+	 * @generated
+	 */
+	EOperation getCellRow__AddBlankCell();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addBooleanCell(boolean) <em>Add Boolean Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Boolean Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addBooleanCell(boolean)
+	 * @generated
+	 */
+	EOperation getCellRow__AddBooleanCell__boolean();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addDateCell(java.util.Date) <em>Add Date Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Date Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addDateCell(java.util.Date)
+	 * @generated
+	 */
+	EOperation getCellRow__AddDateCell__Date();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addEObjectCell(org.eclipse.emf.ecore.EObject) <em>Add EObject Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add EObject Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addEObjectCell(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getCellRow__AddEObjectCell__EObject();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addErrorCell(byte) <em>Add Error Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Error Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addErrorCell(byte)
+	 * @generated
+	 */
+	EOperation getCellRow__AddErrorCell__byte();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addNumericCell(double) <em>Add Numeric Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Numeric Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addNumericCell(double)
+	 * @generated
+	 */
+	EOperation getCellRow__AddNumericCell__double();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addReferenceCell(org.eclipse.emf.ecore.EObject) <em>Add Reference Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Reference Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addReferenceCell(org.eclipse.emf.ecore.EObject)
+	 * @generated
+	 */
+	EOperation getCellRow__AddReferenceCell__EObject();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addStringCell(java.lang.String) <em>Add String Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add String Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addStringCell(java.lang.String)
+	 * @generated
+	 */
+	EOperation getCellRow__AddStringCell__String();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.excel.EObjectRow <em>EObject Row</em>}'.
@@ -1183,6 +1374,14 @@ public interface ExcelPackage extends EPackage {
 		EReference WORKBOOK__SHEETS = eINSTANCE.getWorkbook_Sheets();
 
 		/**
+		 * The meta object literal for the '<em><b>Add Row Sheet</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation WORKBOOK___ADD_ROW_SHEET__STRING = eINSTANCE.getWorkbook__AddRowSheet__String();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.excel.impl.SheetImpl <em>Sheet</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1217,6 +1416,14 @@ public interface ExcelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROW_SHEET__ROWS = eINSTANCE.getRowSheet_Rows();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Cell Row</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ROW_SHEET___ADD_CELL_ROW = eINSTANCE.getRowSheet__AddCellRow();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.excel.impl.ListSheetImpl <em>List Sheet</em>}' class.
@@ -1271,6 +1478,70 @@ public interface ExcelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CELL_ROW__CELLS = eINSTANCE.getCellRow_Cells();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Blank Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_BLANK_CELL = eINSTANCE.getCellRow__AddBlankCell();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Boolean Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_BOOLEAN_CELL__BOOLEAN = eINSTANCE.getCellRow__AddBooleanCell__boolean();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Date Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_DATE_CELL__DATE = eINSTANCE.getCellRow__AddDateCell__Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Add EObject Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_EOBJECT_CELL__EOBJECT = eINSTANCE.getCellRow__AddEObjectCell__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Error Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_ERROR_CELL__BYTE = eINSTANCE.getCellRow__AddErrorCell__byte();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Numeric Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_NUMERIC_CELL__DOUBLE = eINSTANCE.getCellRow__AddNumericCell__double();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Reference Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_REFERENCE_CELL__EOBJECT = eINSTANCE.getCellRow__AddReferenceCell__EObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Add String Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_STRING_CELL__STRING = eINSTANCE.getCellRow__AddStringCell__String();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.excel.impl.EObjectRowImpl <em>EObject Row</em>}' class.

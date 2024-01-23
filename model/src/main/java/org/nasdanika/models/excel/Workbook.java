@@ -39,4 +39,12 @@ public interface Workbook extends EObject {
 	 */
 	EList<Sheet> getSheets();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	RowSheet addRowSheet(String name);
+
 } // Workbook

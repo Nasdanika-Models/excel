@@ -86,7 +86,7 @@ public class CSVLoader implements WorkbookLoader {
 			CSVRecord csvRecord) {
 		
 		CellRow cellRow = getFactory().createCellRow();
-		cellRow.setNumber(csvRecord.getRecordNumber());
+		cellRow.setNumber((int) csvRecord.getRecordNumber());
 		for (String value: csvRecord) {
 			org.nasdanika.models.excel.Cell modelCell = createCell(
 							modelWorkbook, 

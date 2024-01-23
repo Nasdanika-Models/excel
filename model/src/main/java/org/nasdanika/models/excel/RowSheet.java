@@ -33,4 +33,12 @@ public interface RowSheet extends Sheet {
 	 */
 	EList<Row> getRows();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	CellRow addCellRow();
+
 } // RowSheet

@@ -2,6 +2,7 @@ package org.nasdanika.models.excel.util;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -27,6 +28,11 @@ public class WorkbookResourceFactory extends ResourceFactoryImpl {
 				loadContents(workbook, this);
 			}
 			
+			@Override
+			protected void doSave(OutputStream outputStream, Map<?, ?> options) throws IOException {
+				getSaver(this).save((Workbook) getContents().get(0), outputStream);
+			}
+			
 		};
 	}
 	
@@ -45,5 +51,12 @@ public class WorkbookResourceFactory extends ResourceFactoryImpl {
 		}
 		return new XSSWorkbookLoader();
 	}
-		
+	
+	protected WorkbookSaver getSaver(Resource resource) {
+		if (resource.getURI().toString().toLowerCase().endsWith(".csv")) {
+			return new CSVSaver();
+		}
+		return new XSSWorkbookSaver();
+	}
+			
 }

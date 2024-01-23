@@ -2,6 +2,7 @@
  */
 package org.nasdanika.models.excel.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -12,6 +13,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.nasdanika.models.excel.CellRow;
+import org.nasdanika.models.excel.ExcelFactory;
 import org.nasdanika.models.excel.ExcelPackage;
 import org.nasdanika.models.excel.Row;
 import org.nasdanika.models.excel.RowSheet;
@@ -58,6 +61,19 @@ public class RowSheetImpl extends SheetImpl implements RowSheet {
 	@Override
 	public EList<Row> getRows() {
 		return (EList<Row>)eDynamicGet(ExcelPackage.ROW_SHEET__ROWS, ExcelPackage.Literals.ROW_SHEET__ROWS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public CellRow addCellRow() {
+		CellRow cellRow = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createCellRow();
+		cellRow.setNumber(getRows().size());
+		getRows().add(cellRow);
+		return cellRow;
 	}
 
 	/**
@@ -132,6 +148,20 @@ public class RowSheetImpl extends SheetImpl implements RowSheet {
 				return !getRows().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ExcelPackage.ROW_SHEET___ADD_CELL_ROW:
+				return addCellRow();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //RowSheetImpl

@@ -4,6 +4,7 @@ package org.nasdanika.models.excel.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -240,6 +241,16 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getWorkbook__AddRowSheet__String() {
+		return workbookEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSheet() {
 		return sheetEClass;
 	}
@@ -272,6 +283,16 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	@Override
 	public EReference getRowSheet_Rows() {
 		return (EReference)rowSheetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getRowSheet__AddCellRow() {
+		return rowSheetEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -332,6 +353,86 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	@Override
 	public EReference getCellRow_Cells() {
 		return (EReference)cellRowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCellRow__AddBlankCell() {
+		return cellRowEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCellRow__AddBooleanCell__boolean() {
+		return cellRowEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCellRow__AddDateCell__Date() {
+		return cellRowEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCellRow__AddEObjectCell__EObject() {
+		return cellRowEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCellRow__AddErrorCell__byte() {
+		return cellRowEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCellRow__AddNumericCell__double() {
+		return cellRowEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCellRow__AddReferenceCell__EObject() {
+		return cellRowEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getCellRow__AddStringCell__String() {
+		return cellRowEClass.getEOperations().get(7);
 	}
 
 	/**
@@ -575,12 +676,14 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 		// Create classes and their features
 		workbookEClass = createEClass(WORKBOOK);
 		createEReference(workbookEClass, WORKBOOK__SHEETS);
+		createEOperation(workbookEClass, WORKBOOK___ADD_ROW_SHEET__STRING);
 
 		sheetEClass = createEClass(SHEET);
 		createEAttribute(sheetEClass, SHEET__NAME);
 
 		rowSheetEClass = createEClass(ROW_SHEET);
 		createEReference(rowSheetEClass, ROW_SHEET__ROWS);
+		createEOperation(rowSheetEClass, ROW_SHEET___ADD_CELL_ROW);
 
 		listSheetEClass = createEClass(LIST_SHEET);
 		createEReference(listSheetEClass, LIST_SHEET__CONTENTS);
@@ -590,6 +693,14 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 
 		cellRowEClass = createEClass(CELL_ROW);
 		createEReference(cellRowEClass, CELL_ROW__CELLS);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_BLANK_CELL);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_BOOLEAN_CELL__BOOLEAN);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_DATE_CELL__DATE);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_EOBJECT_CELL__EOBJECT);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_ERROR_CELL__BYTE);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_NUMERIC_CELL__DOUBLE);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_REFERENCE_CELL__EOBJECT);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_STRING_CELL__STRING);
 
 		eObjectRowEClass = createEClass(EOBJECT_ROW);
 		createEReference(eObjectRowEClass, EOBJECT_ROW__CONTENTS);
@@ -671,20 +782,48 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 		initEReference(getWorkbook_Sheets(), this.getSheet(), null, "sheets", null, 0, -1, Workbook.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getWorkbook_Sheets().getEKeys().add(this.getSheet_Name());
 
+		EOperation op = initEOperation(getWorkbook__AddRowSheet__String(), this.getRowSheet(), "addRowSheet", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(sheetEClass, Sheet.class, "Sheet", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSheet_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rowSheetEClass, RowSheet.class, "RowSheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRowSheet_Rows(), this.getRow(), null, "rows", null, 0, -1, RowSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getRowSheet__AddCellRow(), this.getCellRow(), "addCellRow", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(listSheetEClass, ListSheet.class, "ListSheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getListSheet_Contents(), ecorePackage.getEObject(), null, "contents", null, 0, -1, ListSheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rowEClass, Row.class, "Row", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRow_Number(), ecorePackage.getELong(), "number", null, 0, 1, Row.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRow_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Row.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cellRowEClass, CellRow.class, "CellRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCellRow_Cells(), this.getCell(), null, "cells", null, 0, -1, CellRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getCellRow__AddBlankCell(), this.getBlankCell(), "addBlankCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCellRow__AddBooleanCell__boolean(), this.getBooleanCell(), "addBooleanCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCellRow__AddDateCell__Date(), this.getDateCell(), "addDateCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCellRow__AddEObjectCell__EObject(), this.getEObjectCell(), "addEObjectCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCellRow__AddErrorCell__byte(), this.getErrorCell(), "addErrorCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEByte(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCellRow__AddNumericCell__double(), this.getNumericCell(), "addNumericCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCellRow__AddReferenceCell__EObject(), this.getReferenceCell(), "addReferenceCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEObject(), "target", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCellRow__AddStringCell__String(), this.getStringCell(), "addStringCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(eObjectRowEClass, EObjectRow.class, "EObjectRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEObjectRow_Contents(), ecorePackage.getEObject(), null, "contents", null, 0, 1, EObjectRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
