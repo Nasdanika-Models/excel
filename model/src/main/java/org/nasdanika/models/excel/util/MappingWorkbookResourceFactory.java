@@ -386,7 +386,6 @@ public abstract class MappingWorkbookResourceFactory extends WorkbookResourceFac
 		return Objects.requireNonNull(DefaultConverter.INSTANCE.convert(value, type), "Cannot convert " + value + " to " + type);
 	}
 	
-
 	// --- Convenience methods ---
 	
 	protected EObject createHtmlDoc(String doc) {
@@ -409,7 +408,6 @@ public abstract class MappingWorkbookResourceFactory extends WorkbookResourceFac
 		ret.setStyle(true);
 		
 		return ret;
-	}
-	
+	}	
 
 }
