@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.nasdanika.models.excel</groupId>
-		<version>2023.12.1</version>
+		<version>2024.1.0</version>
 		<artifactId>parent</artifactId>
 		<relativePath>..</relativePath>
 	</parent>
@@ -16,11 +16,6 @@
 			<artifactId>processors</artifactId>
 			<version>${project.version}</version>
 		</dependency>		
-		<dependency>
-			<groupId>org.nasdanika</groupId>
-			<artifactId>plantuml-diagram-generator</artifactId>
-			<version>2023.12.1</version>
-		</dependency>
 	</dependencies>
 </project>
 
