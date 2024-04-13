@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.nasdanika.models.excel</groupId>
 	<artifactId>parent</artifactId>
-	<version>2024.3.0</version>
+	<version>2024.4.0</version>
 	<packaging>pom</packaging>
 	<name>MS Excel model, processors, doc generator</name>
 	<description>Loading of data from MS Excel to Ecore models</description>
@@ -22,9 +22,9 @@
 	</scm>
 
 	<properties>
-		<core.version>2024.3.1</core.version>
-		<html.version>2024.3.0</html.version>
-		<models.ecore.version>2024.3.0</models.ecore.version>
+		<core.version>2024.4.0</core.version>
+		<html.version>2024.4.0</html.version>
+		<models.ecore.version>2024.4.0</models.ecore.version>
 		<jacoco.version>0.8.11</jacoco.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
