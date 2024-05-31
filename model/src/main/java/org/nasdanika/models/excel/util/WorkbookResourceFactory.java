@@ -42,7 +42,7 @@ public class WorkbookResourceFactory extends ResourceFactoryImpl {
 	 * @param resource
 	 */
 	protected void loadContents(Workbook workbook, Resource resource) {
-		resource.getContents().addAll(workbook.getSheets());		
+		resource.getContents().add(workbook);		
 	}
 
 	protected WorkbookLoader getLoader(Resource resource) {

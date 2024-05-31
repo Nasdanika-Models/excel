@@ -79,22 +79,23 @@ public class ExcelTests {
 		File test = new File("test.xlsx").getCanonicalFile();
 		Resource excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
 		for (EObject root: excelResource.getContents()) {
-			Sheet sheet = (Sheet) root;
-			System.out.println(sheet.getName() + " " + sheet.eClass().getName());
-			for (Row row: ((RowSheet) sheet).getRows()) {
-				System.out.println("\t" + row.getNumber() + " " + row.eClass().getName());
-				for (Cell cell: ((CellRow) row).getCells()) {
-					System.out.println("\t\t" + cell.getColumnIndex() + " " + cell.eClass().getName());
-					if (cell instanceof StringCell) {
-						System.out.println("\t\t\t" + ((StringCell) cell).getValue());
-					}
-				}					
+			for (Sheet sheet: ((Workbook) root).getSheets()) {
+				System.out.println(sheet.getName() + " " + sheet.eClass().getName());
+				for (Row row: ((RowSheet) sheet).getRows()) {
+					System.out.println("\t" + row.getNumber() + " " + row.eClass().getName());
+					for (Cell cell: ((CellRow) row).getCells()) {
+						System.out.println("\t\t" + cell.getColumnIndex() + " " + cell.eClass().getName());
+						if (cell instanceof StringCell) {
+							System.out.println("\t\t\t" + ((StringCell) cell).getValue());
+						}
+					}					
+				}
 			}
 		}
 	}
 	
 	@Test
-	public void testSaveXSSWorkbookResource() throws Exception {
+	public void testSaveAndLoadXSSWorkbookResource() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory());
 		File test = new File("target/test.xlsx").getCanonicalFile();
@@ -122,6 +123,26 @@ public class ExcelTests {
 		dataRow.addStringCell("Hello world!");
 		
 		excelResource.save(null);
+
+		// Reading to a new resource set
+		resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory());
+		excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
+		for (EObject root: excelResource.getContents()) {
+			for (Sheet sheet: ((Workbook) root).getSheets()) {
+				System.out.println(sheet.getName() + " " + sheet.eClass().getName());
+				for (Row row: ((RowSheet) sheet).getRows()) {
+					System.out.println("\t" + row.getNumber() + " " + row.eClass().getName());
+					for (Cell cell: ((CellRow) row).getCells()) {
+						System.out.println("\t\t" + cell.getColumnIndex() + " " + cell.eClass().getName());
+						if (cell instanceof StringCell) {
+							System.out.println("\t\t\t" + ((StringCell) cell).getValue());
+						}
+					}					
+				}
+			}
+		}
+		
 	}
 	
 	@Test
@@ -131,16 +152,17 @@ public class ExcelTests {
 		File test = new File("test.csv").getCanonicalFile();
 		Resource excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
 		for (EObject root: excelResource.getContents()) {
-			Sheet sheet = (Sheet) root;
-			System.out.println(sheet.getName() + " " + sheet.eClass().getName());
-			for (Row row: ((RowSheet) sheet).getRows()) {
-				System.out.println("\t" + row.getNumber() + " " + row.eClass().getName());
-				for (Cell cell: ((CellRow) row).getCells()) {
-					System.out.println("\t\t" + cell.getColumnIndex() + " " + cell.eClass().getName());
-					if (cell instanceof StringCell) {
-						System.out.println("\t\t\t" + ((StringCell) cell).getValue());
-					}
-				}					
+			for (Sheet sheet: ((Workbook) root).getSheets()) {
+				System.out.println(sheet.getName() + " " + sheet.eClass().getName());
+				for (Row row: ((RowSheet) sheet).getRows()) {
+					System.out.println("\t" + row.getNumber() + " " + row.eClass().getName());
+					for (Cell cell: ((CellRow) row).getCells()) {
+						System.out.println("\t\t" + cell.getColumnIndex() + " " + cell.eClass().getName());
+						if (cell instanceof StringCell) {
+							System.out.println("\t\t\t" + ((StringCell) cell).getValue());
+						}
+					}					
+				}
 			}
 		}
 	}
