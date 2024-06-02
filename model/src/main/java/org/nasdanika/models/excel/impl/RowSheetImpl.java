@@ -4,6 +4,7 @@ package org.nasdanika.models.excel.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import java.util.OptionalInt;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -71,7 +72,8 @@ public class RowSheetImpl extends SheetImpl implements RowSheet {
 	@Override
 	public CellRow addCellRow() {
 		CellRow cellRow = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createCellRow();
-		cellRow.setNumber(getRows().size());
+		OptionalInt maxRow = getRows().stream().mapToInt(Row::getNumber).max();
+		cellRow.setNumber(maxRow.orElse(-1) + 1);
 		getRows().add(cellRow);
 		return cellRow;
 	}

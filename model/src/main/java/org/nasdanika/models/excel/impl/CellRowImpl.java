@@ -4,18 +4,14 @@ package org.nasdanika.models.excel.impl;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-
 import java.util.Date;
+
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.nasdanika.models.excel.BlankCell;
 import org.nasdanika.models.excel.BooleanCell;
 import org.nasdanika.models.excel.Cell;
@@ -81,9 +77,13 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	@Override
 	public BlankCell addBlankCell() {
 		BlankCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createBlankCell();
-		cell.setColumnIndex(getCells().size());
+		cell.setColumnIndex(nextColumnIndex());
 		getCells().add(cell);
 		return cell;
+	}
+
+	protected int nextColumnIndex() {
+		return getCells().stream().mapToInt(Cell::getColumnIndex).max().orElse(-1) + 1;		
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	public BooleanCell addBooleanCell(boolean value) {
 		BooleanCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createBooleanCell();
 		cell.setValue(value);
-		cell.setColumnIndex(getCells().size());
+		cell.setColumnIndex(nextColumnIndex());
 		getCells().add(cell);		
 		return cell;
 	}
@@ -109,7 +109,7 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	public DateCell addDateCell(Date value) {
 		DateCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createDateCell();
 		cell.setValue(value);
-		cell.setColumnIndex(getCells().size());
+		cell.setColumnIndex(nextColumnIndex());
 		getCells().add(cell);		
 		return cell;
 	}
@@ -123,7 +123,7 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	public EObjectCell addEObjectCell(EObject value) {
 		EObjectCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createEObjectCell();
 		cell.setValue(value);
-		cell.setColumnIndex(getCells().size());
+		cell.setColumnIndex(nextColumnIndex());
 		getCells().add(cell);		
 		return cell;
 	}
@@ -137,7 +137,7 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	public ErrorCell addErrorCell(byte value) {
 		ErrorCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createErrorCell();
 		cell.setValue(value);
-		cell.setColumnIndex(getCells().size());
+		cell.setColumnIndex(nextColumnIndex());
 		getCells().add(cell);		
 		return cell;
 	}
@@ -151,7 +151,7 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	public NumericCell addNumericCell(double value) {
 		NumericCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createNumericCell();
 		cell.setValue(value);
-		cell.setColumnIndex(getCells().size());
+		cell.setColumnIndex(nextColumnIndex());
 		getCells().add(cell);		
 		return cell;
 	}
@@ -165,7 +165,7 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	public ReferenceCell addReferenceCell(EObject target) {
 		ReferenceCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createReferenceCell();
 		cell.setTarget(target);
-		cell.setColumnIndex(getCells().size());
+		cell.setColumnIndex(nextColumnIndex());
 		getCells().add(cell);		
 		return cell;
 	}
@@ -179,7 +179,7 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	public StringCell addStringCell(String value) {
 		StringCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createStringCell();
 		cell.setValue(value);
-		cell.setColumnIndex(getCells().size());
+		cell.setColumnIndex(nextColumnIndex());
 		getCells().add(cell);		
 		return cell;
 	}
