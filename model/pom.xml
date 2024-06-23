@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.nasdanika.models.excel</groupId>
-		<version>2024.5.1</version>
+		<version>2024.6.0</version>
 		<artifactId>parent</artifactId>
 		<relativePath>..</relativePath>
 	</parent>
@@ -16,7 +16,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.3.0</version>
+				<version>3.4.2</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -65,7 +65,7 @@
 		<dependency>
 		    <groupId>org.eclipse.emf</groupId>
 		    <artifactId>org.eclipse.emf.ecore</artifactId>
-		    <version>2.35.0</version>
+		    <version>2.36.0</version>
 		</dependency> 		
 		<dependency>
 		    <groupId>org.apache.poi</groupId>
@@ -75,7 +75,7 @@
 		<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-csv</artifactId>
-		    <version>1.10.0</version>
+		    <version>1.11.0</version>
 		</dependency>		
 	</dependencies>
 </project>
