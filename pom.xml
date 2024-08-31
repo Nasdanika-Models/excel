@@ -230,8 +230,6 @@
 				</snapshotRepository>
 			</distributionManagement>	
 		</profile>
-	</profiles>
-	 <profiles>
 		<profile>
 			<id>github</id>
 			<distributionManagement>
