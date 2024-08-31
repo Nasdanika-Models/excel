@@ -231,6 +231,18 @@
 			</distributionManagement>	
 		</profile>
 	</profiles>
+	 <profiles>
+		<profile>
+			<id>github</id>
+			<distributionManagement>
+			   <repository>
+			     <id>github</id>
+			     <name>GitHub Nasdanika Models Apache Maven Packages</name>
+			     <url>https://maven.pkg.github.com/Nasdanika-Models/excel</url>
+			   </repository>
+			</distributionManagement>
+		</profile>
+	</profiles>
 
 </project>
 
