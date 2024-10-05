@@ -1,5 +1,7 @@
 import org.nasdanika.capability.CapabilityFactory;
+import org.nasdanika.models.excel.util.CsvResourceFactoryCapabilityFactory;
 import org.nasdanika.models.excel.util.ExcelEPackageResourceSetCapabilityFactory;
+import org.nasdanika.models.excel.util.WorkbookResourceFactoryCapabilityFactory;
 
 module org.nasdanika.models.excel {
 	exports org.nasdanika.models.excel;
@@ -13,5 +15,8 @@ module org.nasdanika.models.excel {
 	requires org.nasdanika.common;
 	requires transitive org.nasdanika.exec;
 	
-	provides CapabilityFactory with ExcelEPackageResourceSetCapabilityFactory;
+	provides CapabilityFactory with 
+		ExcelEPackageResourceSetCapabilityFactory,
+		WorkbookResourceFactoryCapabilityFactory,
+		CsvResourceFactoryCapabilityFactory;
 }
