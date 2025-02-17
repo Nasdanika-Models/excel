@@ -76,6 +76,11 @@
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-csv</artifactId>
 		    <version>1.11.0</version> <!-- Can't upgrade due to conflict with poi-ooxml -->
-		</dependency>		
+		</dependency>
+		<dependency>
+			<groupId>org.nasdanika.demos</groupId>
+			<artifactId>concurrent-executable-diagrams</artifactId>
+			<version>2025.1.0</version>
+		</dependency>
 	</dependencies>
 </project>
