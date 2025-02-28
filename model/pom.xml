@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.nasdanika.models.excel</groupId>
-		<version>2025.1.0</version>
+		<version>2025.2.0</version>
 		<artifactId>parent</artifactId>
 		<relativePath>..</relativePath>
 	</parent>
@@ -76,11 +76,6 @@
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-csv</artifactId>
 		    <version>1.11.0</version> <!-- Can't upgrade due to conflict with poi-ooxml -->
-		</dependency>
-		<dependency>
-			<groupId>org.nasdanika.demos</groupId>
-			<artifactId>concurrent-executable-diagrams</artifactId>
-			<version>2025.1.0</version>
 		</dependency>
 	</dependencies>
 </project>
