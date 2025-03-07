@@ -33,6 +33,9 @@ bootstrap.Page:
       
         gtag('config', 'G-9BRJVLK8CC');
       </script>    
+      
+      <!-- ${search-config} -->
+       
   body:
     app.Page:
       fluid: true
