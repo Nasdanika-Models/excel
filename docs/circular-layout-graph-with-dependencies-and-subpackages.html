@@ -34,9 +34,48 @@
 
   gtag('config', 'G-9BRJVLK8CC');
 </script>    
+
+<!--  Start search configuration -->
+<script src="search-documents.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/olivernn/lunr.js@v2.3.9/lunr.js"></script>
+
+<script>
+// Script for full-text search of JsTree
+
+window.nsdJsTreeSearchCallback = function(str, node) { 
+    var sf = new $.vakata.search(str, true, { caseSensitive : false, fuzzy : false }); 
+    if (sf.search(node.text).isMatch) {
+		return true;
+	} 
+    let searchResult = this.search(str); 
+    for (const sr in searchResult) {
+        if (searchResult[sr].ref === node.original['data-nsd-label-uuid']) {
+            return true;
+        } 
+    } 
+    return false; 
+}.bind(lunr(function () {
+			  this.ref('id');
+			  this.field('title');
+			  this.field('content');
+
+			  for (const key in searchDocuments) {
+				  let doc = searchDocuments[key];
+				this.add({
+					id: doc['link-uuid'],
+					title: doc.title,
+					path: doc.path,
+					content: doc.content
+				});  
+			  }
+			}));
+</script>
+<!-- End search configuration  -->
+ 
 </head>
   <body>
-    <div tabindex="-1" id="nsd_zg" class="modal">
+    <div tabindex="-1" id="nsd_1an" class="modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">Hover mouse over nodes elements to display tooltips.
@@ -49,14 +88,14 @@ Drag to rearrange.
     <div class="container-fluid nsd-app-container">
       <div class="row">
         <div class="col nsd-app-header">
-          <a href="https://github.com/Nasdanika-Models" data-nsd-label-uuid="93424ecb-3a2b-457d-afd9-4a264e0e7cbd" class="nsd-app-header-title">
+          <a href="https://github.com/Nasdanika-Models" data-nsd-label-uuid="9cdf0892-4b43-4569-ba46-efed08a1edea" class="nsd-app-header-title">
             <img src="https://docs.nasdanika.org/images/nasdanika-logo.png" class="nsd-app-label-icon"/>Nasdanika Models</a>
           <ul class="nav nsd-app-header-navs">
             <li class="nav-item">
-              <a href="search.html" data-nsd-label-uuid="42c2d8af-d2be-477c-bba8-48c42b8066cb" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
+              <a href="search.html" data-nsd-label-uuid="c2342f74-9418-453a-ac90-f4803688900b" class="nav-link"><span class="fas fa-search nsd-app-label-icon"></span>Search</a>
             </li>
             <li class="nav-item">
-              <a href="glossary.html" data-nsd-label-uuid="814cf546-b1c9-4742-8033-bdf6eb49e5fd" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
+              <a href="glossary.html" data-nsd-label-uuid="2213d218-fe2d-428a-a095-9c4c1df6b308" class="nav-link"><span class="fas fa-book nsd-app-label-icon"></span>Glossary</a>
             </li>
           </ul>
         </div>
@@ -64,29 +103,29 @@ Drag to rearrange.
       <div class="row">
         <div class="col nsd-app-navbar">
           <ul class="navbar navbar-light navbar-expand-lg">
-            <a href="index.html" title="A model of MS Excel and CSV objects" data-nsd-label-uuid="5f593ce6-4886-448e-98ae-d9c61fff6536" class="navbar-brand">
+            <a href="index.html" title="A model of MS Excel and CSV objects" data-nsd-label-uuid="a470bea9-1bc2-48c8-8b7d-1f0c27d96061" class="navbar-brand">
               <img src="https://docs.nasdanika.org/images/excel.svg" class="nsd-app-label-icon"/>Excel</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_yy" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_1a5" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_yy" class="collapse navbar-collapse">
+            <div id="nsd_1a5" class="collapse navbar-collapse">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a href="classifiers.html" data-nsd-label-uuid="84ce155c-6c7a-4af6-8a3b-84e9c00e9bbb" class="nav-link">Classifiers</a>
+                  <a href="classifiers.html" data-nsd-label-uuid="5eb7f2d2-59dc-48b0-b1cb-62f922aafade" class="nav-link">Classifiers</a>
                 </li>
                 <li class="nav-item">
-                  <a href="diagram.html" data-nsd-label-uuid="e9129eba-76f3-4db1-8206-26c2a3a87cf9" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
+                  <a href="diagram.html" data-nsd-label-uuid="2406653a-afd3-4fbd-a152-2c3ae2b4a175" class="nav-link"><span class="fas fa-project-diagram nsd-app-label-icon"></span>Diagram</a>
                 </li>
                 <li class="nav-item">
-                  <li data-nsd-label-uuid="46cfc43a-4ab3-4906-bdfc-d107dd004a27" class="dropdown">
+                  <li data-nsd-label-uuid="8e11df4e-5ace-471e-910e-b39d6c72dcf0" class="dropdown">
                     <a role="button" data-toggle="dropdown" class="nav-link dropdown-toggle">
                       <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</a>
                     <div class="dropdown-menu">
-                      <a href="default-graph.html" data-nsd-label-uuid="fdf0a175-45ff-4e68-9fa6-7e729d25575a" class="dropdown-item">Default Graph</a>
-                      <a href="circular-layout-graph.html" data-nsd-label-uuid="b220c4ed-7d3b-44f9-b628-a42ec1df882d" class="dropdown-item">Circular Graph</a>
-                      <a href="force-layout-graph.html" data-nsd-label-uuid="1ecf89aa-0c3f-4166-a323-96e2aa8c35f2" class="dropdown-item">Force Graph</a>
+                      <a href="default-graph.html" data-nsd-label-uuid="52f2b7fd-4452-42b3-a565-8465883f5ee8" class="dropdown-item">Default Graph</a>
+                      <a href="circular-layout-graph.html" data-nsd-label-uuid="8021a957-6388-456a-bc56-58887823e34c" class="dropdown-item">Circular Graph</a>
+                      <a href="force-layout-graph.html" data-nsd-label-uuid="887fbe3f-8d78-46f6-9e94-67d9b73e7547" class="dropdown-item">Force Graph</a>
                       <div title="With dependencies and sub-packages" class="dropdown-divider"></div>
-                      <a href="default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="38e514a2-1d3a-410e-b6b4-54c9017f1178" class="dropdown-item">Default Graph</a><span data-nsd-label-uuid="ff3d6d65-6a10-4250-a5d6-f2db53924c63" class="active dropdown-item">Circular Graph</span>
-                      <a href="force-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="530dcaf0-d38a-46b2-91c6-2e4aae9257c3" class="dropdown-item">Force Graph</a>
+                      <a href="default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="e0a814dd-41b5-41ed-b89c-cc85edd74dd5" class="dropdown-item">Default Graph</a><span data-nsd-label-uuid="a1ce1f0d-f16c-42f8-b925-c835c23c64fc" class="active dropdown-item">Circular Graph</span>
+                      <a href="force-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="f8f63bb1-8267-409c-9e2d-77a88945204c" class="dropdown-item">Force Graph</a>
                     </div>
                   </li>
                 </li>
@@ -98,51 +137,51 @@ Drag to rearrange.
       <div class="row nsd-app-content-row">
         <div class="col nsd-app-navigation-panel">
           <div class="list-group list-group-flush">
-            <a href="references/eClassifiers/BlankCell/index.html" data-nsd-label-uuid="ee6a1e8f-d92a-4b68-8f9f-c7542a604fab" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/BlankCell/index.html" data-nsd-label-uuid="a057d5f3-19f3-4c1f-8316-8f775ab8faf3" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>BlankCell</a>
-            <a href="references/eClassifiers/BooleanCell/index.html" data-nsd-label-uuid="b0b70e66-ac26-4cea-b8f2-f404d173ecbe" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/BooleanCell/index.html" data-nsd-label-uuid="493227bd-41d6-4975-94b6-516b8403ecf4" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>BooleanCell</a>
-            <a href="references/eClassifiers/Cell/index.html" data-nsd-label-uuid="e17087c6-ed65-4cf0-9987-acb3ddcbfc1c" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/Cell/index.html" data-nsd-label-uuid="2642bfe9-00bb-4f1d-b4bc-3a72a98c491b" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Cell</a>
-            <a href="references/eClassifiers/CellRow/index.html" data-nsd-label-uuid="e8964e9c-3694-43e9-ac6c-ecf8c7760570" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/CellRow/index.html" data-nsd-label-uuid="3df5ca1f-6b10-4228-9981-ea73b523fc1c" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>CellRow</a>
-            <a href="references/eClassifiers/DateCell/index.html" data-nsd-label-uuid="bad2bf0a-8003-4619-b94c-8106509a99f6" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/DateCell/index.html" data-nsd-label-uuid="d120e68a-373c-4d1f-8d91-114ae07a6ae8" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>DateCell</a>
-            <a href="references/eClassifiers/EObjectCell/index.html" data-nsd-label-uuid="4079a08a-3459-4441-9497-e37d8369e4fc" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/EObjectCell/index.html" data-nsd-label-uuid="5125d411-4f42-4670-98f5-8b92cb6d7b53" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>EObjectCell</a>
-            <a href="references/eClassifiers/EObjectRow/index.html" data-nsd-label-uuid="2578af08-0aa2-4635-afe9-10a3a69d40a3" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/EObjectRow/index.html" data-nsd-label-uuid="fb0ccc5a-7e2b-4714-80dd-af8705fb9252" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>EObjectRow</a>
-            <a href="references/eClassifiers/ErrorCell/index.html" data-nsd-label-uuid="083a826d-f79d-4a53-a87a-5f95494254d5" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/ErrorCell/index.html" data-nsd-label-uuid="9fe1e3ad-9907-4328-b925-4f60ea5048ab" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>ErrorCell</a>
-            <a href="references/eClassifiers/ListRow/index.html" data-nsd-label-uuid="82b798eb-8f97-4354-860f-135aa50159a0" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/ListRow/index.html" data-nsd-label-uuid="d67b4de3-6abf-47f6-8872-6fba619ed37b" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>ListRow</a>
-            <a href="references/eClassifiers/ListSheet/index.html" data-nsd-label-uuid="ce90dd64-fac8-49ae-92a9-ae72e0904330" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/ListSheet/index.html" data-nsd-label-uuid="9db7e0ea-4860-4d3f-ad03-7465166656d3" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>ListSheet</a>
-            <a href="references/eClassifiers/NumericCell/index.html" data-nsd-label-uuid="f6f3a7fa-bf73-4733-b789-6e60582d6001" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/NumericCell/index.html" data-nsd-label-uuid="acf1e3dc-11cc-47e7-80c9-2e5e32b6649b" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>NumericCell</a>
-            <a href="references/eClassifiers/ReferenceCell/index.html" data-nsd-label-uuid="39ee7dcd-c989-42cd-b48e-445207c6f0c9" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/ReferenceCell/index.html" data-nsd-label-uuid="cf9eab14-30b2-403a-8868-f389f4de29b5" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>ReferenceCell</a>
-            <a href="references/eClassifiers/Row/index.html" data-nsd-label-uuid="1f938dbc-abb6-47fb-904b-dcd3166ac2ab" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/Row/index.html" data-nsd-label-uuid="2de67182-df0b-484d-831c-a43bfe0175a1" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/><i>Row</i></a>
-            <a href="references/eClassifiers/RowSheet/index.html" data-nsd-label-uuid="16fea105-635a-4383-b7ce-69de00a846ff" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/RowSheet/index.html" data-nsd-label-uuid="580a301f-45e8-4740-bc76-e7be2a3cc4b3" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>RowSheet</a>
-            <a href="references/eClassifiers/Sheet/index.html" data-nsd-label-uuid="800b3402-f6e8-4c2a-bf6b-6726775f630a" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/Sheet/index.html" data-nsd-label-uuid="aac02a19-ec69-47fa-9b0c-c10bbfe5d04d" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/><i>Sheet</i></a>
-            <a href="references/eClassifiers/StringCell/index.html" data-nsd-label-uuid="ab34cb22-a0db-4e98-aa70-5dbdba47cc4b" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/StringCell/index.html" data-nsd-label-uuid="fdc75c47-ed8c-4164-aa84-040bbc2e71c2" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>StringCell</a>
-            <a href="references/eClassifiers/Workbook/index.html" title="Excel workbook containing sheets of possibly different type" data-nsd-label-uuid="9068094f-4b9a-454c-9d77-63465c78f832" class="list-group-item list-group-action">
+            <a href="references/eClassifiers/Workbook/index.html" title="Excel workbook containing sheets of possibly different type" data-nsd-label-uuid="b2fc7332-4193-4453-b9d9-d00579615215" class="list-group-item list-group-action">
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Workbook</a>
           </div>
         </div>
-        <div data-nsd-label-uuid="ff3d6d65-6a10-4250-a5d6-f2db53924c63" data-nsd-action-uris="uuid:ff3d6d65-6a10-4250-a5d6-f2db53924c63" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="a1ce1f0d-f16c-42f8-b925-c835c23c64fc" data-nsd-action-uris="uuid:a1ce1f0d-f16c-42f8-b925-c835c23c64fc" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-breadcrumb-row">
               <div class="col">
                 <nav aria-label="breadcrumb" class="nsd-app-content-panel-breadcrumb">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><span data-nsd-label-uuid="46cfc43a-4ab3-4906-bdfc-d107dd004a27"><img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</span>
+                    <li class="breadcrumb-item"><span data-nsd-label-uuid="8e11df4e-5ace-471e-910e-b39d6c72dcf0"><img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</span>
                     </li>
-                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="ff3d6d65-6a10-4250-a5d6-f2db53924c63">Circular Graph</span>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="a1ce1f0d-f16c-42f8-b925-c835c23c64fc">Circular Graph</span>
                     </li>
                   </ol>
                 </nav>
@@ -150,7 +189,7 @@ Drag to rearrange.
             </div>
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <H1><span data-nsd-label-uuid="ff3d6d65-6a10-4250-a5d6-f2db53924c63" class="nsd-app-content-panel-title">Circular Graph<a data-toggle="modal" data-target="#nsd_zg" href="#" title="A circular layout graph of package classifiers showing relationships between them" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
+                <H1><span data-nsd-label-uuid="a1ce1f0d-f16c-42f8-b925-c835c23c64fc" class="nsd-app-content-panel-title">Circular Graph<a data-toggle="modal" data-target="#nsd_1an" href="#" title="A circular layout graph of package classifiers showing relationships between them" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
                 </H1>
               </div>
             </div>
@@ -167,7 +206,7 @@ Drag to rearrange.
 			render: "canvas",
 			useDirtyRect: false
 		});
-		var option = {"legend":{},"series":[{"type":"graph","emphasis":{"focus":"adjacency"},"data":[{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Cell@ecore://nasdanika.org/models/excel","name":"Cell","value":{"externalLink":"references/eClassifiers/Cell/index.html"},"x":574.0784823541698,"y":133.8434422945074,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EBoolean@http://www.eclipse.org/emf/2002/Ecore","name":"EBoolean","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EBoolean/index.html"},"x":382.8848077890746,"y":93.13923842046079,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"BooleanCell@ecore://nasdanika.org/models/excel","name":"BooleanCell","value":{"externalLink":"references/eClassifiers/BooleanCell/index.html"},"x":480.5672863490436,"y":36.53136263755864,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"RowSheet@ecore://nasdanika.org/models/excel","name":"RowSheet","value":{"externalLink":"references/eClassifiers/RowSheet/index.html"},"x":491.2731651152318,"y":412.6102523311839,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Sheet@ecore://nasdanika.org/models/excel","name":"Sheet","value":{"externalLink":"references/eClassifiers/Sheet/index.html"},"x":458.2368729562138,"y":530.2639033076565,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"CellRow@ecore://nasdanika.org/models/excel","name":"CellRow","value":{"externalLink":"references/eClassifiers/CellRow/index.html"},"x":567.2486024396324,"y":187.5480329719341,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Row@ecore://nasdanika.org/models/excel","name":"Row","value":{"externalLink":"references/eClassifiers/Row/index.html"},"x":372.7472527375346,"y":311.06096252514163,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"BlankCell@ecore://nasdanika.org/models/excel","name":"BlankCell","value":{"externalLink":"references/eClassifiers/BlankCell/index.html"},"x":566.1073703370337,"y":2.726942519539631,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"DateCell@ecore://nasdanika.org/models/excel","name":"DateCell","value":{"externalLink":"references/eClassifiers/DateCell/index.html"},"x":704.627652546827,"y":107.33823193352563,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EDate@http://www.eclipse.org/emf/2002/Ecore","name":"EDate","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EDate/index.html"},"x":783.8283702310919,"y":130.09568808590112,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ListSheet@ecore://nasdanika.org/models/excel","name":"ListSheet","value":{"externalLink":"references/eClassifiers/ListSheet/index.html"},"x":318.89290119442165,"y":454.3763234652609,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EString@http://www.eclipse.org/emf/2002/Ecore","name":"EString","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EString/index.html"},"x":582.1970699615624,"y":419.5776830969512,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Workbook@ecore://nasdanika.org/models/excel","name":"Workbook","value":{"description":"Excel workbook containing sheets of possibly different type","externalLink":"references/eClassifiers/Workbook/index.html"},"x":549.8682148046028,"y":555.7266805671829,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ReferenceCell@ecore://nasdanika.org/models/excel","name":"ReferenceCell","value":{"externalLink":"references/eClassifiers/ReferenceCell/index.html"},"x":451.605265252776,"y":185.83905064293984,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EByte@http://www.eclipse.org/emf/2002/Ecore","name":"EByte","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EByte/index.html"},"x":764.25371251183,"y":263.10534555209733,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"EObject@http://www.eclipse.org/emf/2002/Ecore","name":"EObject","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EObject/index.html"},"x":347.2638606165357,"y":240.80814710327323,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EDouble@http://www.eclipse.org/emf/2002/Ecore","name":"EDouble","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EDouble/index.html"},"x":702.8507926307294,"y":0.0,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"NumericCell@ecore://nasdanika.org/models/excel","name":"NumericCell","value":{"externalLink":"references/eClassifiers/NumericCell/index.html"},"x":639.0852979558621,"y":33.08556536559947,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ErrorCell@ecore://nasdanika.org/models/excel","name":"ErrorCell","value":{"externalLink":"references/eClassifiers/ErrorCell/index.html"},"x":702.6120749955509,"y":203.56951558325127,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"EObjectCell@ecore://nasdanika.org/models/excel","name":"EObjectCell","value":{"externalLink":"references/eClassifiers/EObjectCell/index.html"},"x":443.37177805549476,"y":126.62139156056354,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"StringCell@ecore://nasdanika.org/models/excel","name":"StringCell","value":{"externalLink":"references/eClassifiers/StringCell/index.html"},"x":629.2201765958043,"y":293.90679939970914,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EInt@http://www.eclipse.org/emf/2002/Ecore","name":"EInt","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EInt/index.html"},"x":478.6243989656062,"y":271.5649578118008,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"EObjectRow@ecore://nasdanika.org/models/excel","name":"EObjectRow","value":{"externalLink":"references/eClassifiers/EObjectRow/index.html"},"x":212.07005025207175,"y":254.58804912098145,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ListRow@ecore://nasdanika.org/models/excel","name":"ListRow","value":{"externalLink":"references/eClassifiers/ListRow/index.html"},"x":224.79888648274348,"y":336.4976053248007,"category":0}],"symbolSize":20,"roam":true,"layout":"circular","links":[{"source":0,"target":2},{"source":0,"target":5},{"source":0,"target":7},{"source":0,"target":8},{"source":0,"target":13},{"source":0,"target":17},{"source":0,"target":18},{"source":0,"target":19},{"source":0,"target":20},{"source":0,"target":21},{"source":2,"target":0},{"source":2,"target":1},{"source":3,"target":4},{"source":3,"target":5},{"source":3,"target":6},{"source":4,"target":3},{"source":4,"target":10},{"source":4,"target":11},{"source":4,"target":12},{"source":5,"target":0},{"source":5,"target":1},{"source":5,"target":2},{"source":5,"target":6},{"source":5,"target":7},{"source":5,"target":8},{"source":5,"target":9},{"source":5,"target":11},{"source":5,"target":13},{"source":5,"target":14},{"source":5,"target":15},{"source":5,"target":16},{"source":5,"target":17},{"source":5,"target":18},{"source":5,"target":19},{"source":5,"target":20},{"source":6,"target":3},{"source":6,"target":5},{"source":6,"target":21},{"source":6,"target":22},{"source":6,"target":23},{"source":7,"target":0},{"source":8,"target":0},{"source":8,"target":9},{"source":10,"target":4},{"source":10,"target":15},{"source":12,"target":4},{"source":12,"target":3},{"source":12,"target":11},{"source":13,"target":0},{"source":13,"target":15},{"source":15,"target":13},{"source":15,"target":1},{"source":15,"target":10},{"source":15,"target":19},{"source":15,"target":22},{"source":15,"target":23},{"source":17,"target":0},{"source":17,"target":16},{"source":18,"target":14},{"source":18,"target":0},{"source":19,"target":0},{"source":19,"target":15},{"source":20,"target":0},{"source":20,"target":11},{"source":22,"target":15},{"source":22,"target":6},{"source":23,"target":15},{"source":23,"target":6}],"categories":[{"name":"excel"},{"name":"ecore"}],"draggable":true,"label":{"show":true,"position":"right"},"lineStyle":{"color":"source","curveness":0.3},"circular":{"rotateLabel":true}}]};
+		var option = {"legend":{},"series":[{"type":"graph","emphasis":{"focus":"adjacency"},"data":[{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Cell@ecore://nasdanika.org/models/excel","name":"Cell","value":{"externalLink":"references/eClassifiers/Cell/index.html"},"x":446.43744454256966,"y":510.7214035844455,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"BlankCell@ecore://nasdanika.org/models/excel","name":"BlankCell","value":{"externalLink":"references/eClassifiers/BlankCell/index.html"},"x":325.0760529369575,"y":558.6725072366553,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"NumericCell@ecore://nasdanika.org/models/excel","name":"NumericCell","value":{"externalLink":"references/eClassifiers/NumericCell/index.html"},"x":390.1481569719368,"y":620.2675896739121,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EString@http://www.eclipse.org/emf/2002/Ecore","name":"EString","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EString/index.html"},"x":584.1868735766672,"y":257.38449207534484,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"EObject@http://www.eclipse.org/emf/2002/Ecore","name":"EObject","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EObject/index.html"},"x":596.3332292609268,"y":327.9644102160345,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EBoolean@http://www.eclipse.org/emf/2002/Ecore","name":"EBoolean","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EBoolean/index.html"},"x":413.219470690908,"y":303.0545839298589,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ReferenceCell@ecore://nasdanika.org/models/excel","name":"ReferenceCell","value":{"externalLink":"references/eClassifiers/ReferenceCell/index.html"},"x":460.34156104365525,"y":374.0836533303219,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"BooleanCell@ecore://nasdanika.org/models/excel","name":"BooleanCell","value":{"externalLink":"references/eClassifiers/BooleanCell/index.html"},"x":339.39281687581735,"y":388.6467724382365,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"CellRow@ecore://nasdanika.org/models/excel","name":"CellRow","value":{"externalLink":"references/eClassifiers/CellRow/index.html"},"x":450.1391890542513,"y":452.80971229114994,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EDate@http://www.eclipse.org/emf/2002/Ecore","name":"EDate","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EDate/index.html"},"x":229.64246291153168,"y":435.6595622775302,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"EObjectCell@ecore://nasdanika.org/models/excel","name":"EObjectCell","value":{"externalLink":"references/eClassifiers/EObjectCell/index.html"},"x":566.6241216845974,"y":483.11099765545595,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EByte@http://www.eclipse.org/emf/2002/Ecore","name":"EByte","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EByte/index.html"},"x":527.3064633643635,"y":669.6059689348444,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ErrorCell@ecore://nasdanika.org/models/excel","name":"ErrorCell","value":{"externalLink":"references/eClassifiers/ErrorCell/index.html"},"x":481.81129693539117,"y":620.1448331930181,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EDouble@http://www.eclipse.org/emf/2002/Ecore","name":"EDouble","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EDouble/index.html"},"x":321.2904027403142,"y":646.9195500456157,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"StringCell@ecore://nasdanika.org/models/excel","name":"StringCell","value":{"externalLink":"references/eClassifiers/StringCell/index.html"},"x":531.9950281222208,"y":399.21149788158056,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Row@ecore://nasdanika.org/models/excel","name":"Row","value":{"externalLink":"references/eClassifiers/Row/index.html"},"x":643.585084356168,"y":366.15223462250594,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"DateCell@ecore://nasdanika.org/models/excel","name":"DateCell","value":{"externalLink":"references/eClassifiers/DateCell/index.html"},"x":293.9808924841053,"y":487.12599662239717,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ListRow@ecore://nasdanika.org/models/excel","name":"ListRow","value":{"externalLink":"references/eClassifiers/ListRow/index.html"},"x":636.2087358636152,"y":203.3810451285703,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"EObjectRow@ecore://nasdanika.org/models/excel","name":"EObjectRow","value":{"externalLink":"references/eClassifiers/EObjectRow/index.html"},"x":772.5287600510676,"y":352.0882287353466,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Sheet@ecore://nasdanika.org/models/excel","name":"Sheet","value":{"externalLink":"references/eClassifiers/Sheet/index.html"},"x":668.7714008125499,"y":120.20972400103341,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"RowSheet@ecore://nasdanika.org/models/excel","name":"RowSheet","value":{"externalLink":"references/eClassifiers/RowSheet/index.html"},"x":546.2362902497898,"y":224.7142465669938,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EDataType.gif","id":"EInt@http://www.eclipse.org/emf/2002/Ecore","name":"EInt","value":{"externalLink":"https://ecore.models.nasdanika.org/references/eClassifiers/EInt/index.html"},"x":644.9618659322334,"y":530.9070579132733,"category":1},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ListSheet@ecore://nasdanika.org/models/excel","name":"ListSheet","value":{"externalLink":"references/eClassifiers/ListSheet/index.html"},"x":757.45906994494,"y":186.80171840716977,"category":0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Workbook@ecore://nasdanika.org/models/excel","name":"Workbook","value":{"description":"Excel workbook containing sheets of possibly different type","externalLink":"references/eClassifiers/Workbook/index.html"},"x":591.195576419278,"y":88.04762426000849,"category":0}],"symbolSize":20,"roam":true,"layout":"circular","links":[{"source":0,"target":1},{"source":0,"target":2},{"source":0,"target":6},{"source":0,"target":7},{"source":0,"target":8},{"source":0,"target":10},{"source":0,"target":12},{"source":0,"target":14},{"source":0,"target":16},{"source":0,"target":21},{"source":1,"target":0},{"source":2,"target":0},{"source":2,"target":13},{"source":4,"target":5},{"source":4,"target":6},{"source":4,"target":10},{"source":4,"target":17},{"source":4,"target":18},{"source":4,"target":22},{"source":6,"target":0},{"source":6,"target":4},{"source":7,"target":5},{"source":7,"target":0},{"source":8,"target":0},{"source":8,"target":2},{"source":8,"target":3},{"source":8,"target":1},{"source":8,"target":4},{"source":8,"target":5},{"source":8,"target":6},{"source":8,"target":7},{"source":8,"target":9},{"source":8,"target":10},{"source":8,"target":11},{"source":8,"target":12},{"source":8,"target":13},{"source":8,"target":14},{"source":8,"target":15},{"source":8,"target":16},{"source":10,"target":0},{"source":10,"target":4},{"source":12,"target":0},{"source":12,"target":11},{"source":14,"target":0},{"source":14,"target":3},{"source":15,"target":8},{"source":15,"target":17},{"source":15,"target":18},{"source":15,"target":20},{"source":15,"target":21},{"source":16,"target":0},{"source":16,"target":9},{"source":17,"target":15},{"source":17,"target":4},{"source":18,"target":15},{"source":18,"target":4},{"source":19,"target":3},{"source":19,"target":20},{"source":19,"target":22},{"source":19,"target":23},{"source":20,"target":19},{"source":20,"target":8},{"source":20,"target":15},{"source":22,"target":19},{"source":22,"target":4},{"source":23,"target":19},{"source":23,"target":20},{"source":23,"target":3}],"categories":[{"name":"excel"},{"name":"ecore"}],"draggable":true,"label":{"show":true,"position":"right"},"lineStyle":{"color":"source","curveness":0.3},"circular":{"rotateLabel":true}}]};
 		option.tooltip = {};
 		option.series[0].tooltip = {
 			formatter: function(arg) {
@@ -199,7 +238,7 @@ Drag to rearrange.
         <div class="col nsd-app-footer">
           <ul class="nav nsd-app-footer-navs">
             <li class="nav-item">
-              <a href="https://github.com/Nasdanika-Models/excel" data-nsd-label-uuid="a7ca2972-5a19-472e-a329-0c77f25f4e80" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
+              <a href="https://github.com/Nasdanika-Models/excel" data-nsd-label-uuid="2361ca95-2ccf-4963-8620-429543149edf" class="nav-link"><span class="fab fa-github nsd-app-label-icon"></span>Sources</a>
             </li>
           </ul>
         </div>
