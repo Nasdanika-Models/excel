@@ -1,312 +1,364 @@
 {
   "references/eClassifiers/RowSheet/references/eStructuralFeatures/rows/index.html": {
     "path": "RowSheet/References/rows",
-    "link-uuid": "84cc47c0-a7e7-43d3-8d73-4c4a1884bb2d",
+    "link-uuid": "17c4c1c6-ac48-4412-9edc-711fad95ee25",
     "title": "rows",
-    "content": "Type Row Multiplicity 0..*"
+    "content": "Type Row Multiplicity 0..*",
+    "timestamp": 1747875896014
   },
   "references/eClassifiers/Sheet/inheritance.html": {
     "path": "Sheet/Inheritance",
-    "link-uuid": "a6025e98-f027-4475-8064-bd3f0a86b194",
+    "link-uuid": "5e1d0b90-1d39-4d4f-b12b-f2ae4d8637d2",
     "title": "Inheritance",
-    "content": "Subtypes "
+    "content": "Subtypes ",
+    "timestamp": 1747875896025
   },
   "references/eClassifiers/StringCell/references/eStructuralFeatures/value/index.html": {
     "path": "StringCell/Attributes/value",
-    "link-uuid": "a89ba9c2-3729-4329-9b2c-6e8eaf934ba0",
+    "link-uuid": "1fd53810-914e-4b41-8f3d-42d99fc486fc",
     "title": "value",
-    "content": "Type EString Multiplicity 0..1"
+    "content": "Type EString Multiplicity 0..1",
+    "timestamp": 1747875896038
   },
   "references/eClassifiers/Cell/inheritance.html": {
     "path": "Cell/Inheritance",
-    "link-uuid": "0eb6b732-7b8a-488a-a34a-960af6707336",
+    "link-uuid": "12e6c095-fc75-47ab-954a-54f4e12c650e",
     "title": "Inheritance",
-    "content": "Subtypes "
+    "content": "Subtypes ",
+    "timestamp": 1747875895819
   },
   "references/eClassifiers/RowSheet/references/eOperations/addCellRow-0/index.html": {
     "path": "RowSheet/Operations/addCellRow",
-    "link-uuid": "38088959-0aaf-48e2-83b8-e80614618bb2",
+    "link-uuid": "1416abc4-9cf4-43b5-8e8c-956784b95b99",
     "title": "addCellRow",
-    "content": "Type CellRow Multiplicity 0..1"
+    "content": "Type CellRow Multiplicity 0..1",
+    "timestamp": 1747875896013
   },
   "references/eClassifiers/CellRow/references/eOperations/addBlankCell-0/index.html": {
     "path": "CellRow/Operations/addBlankCell",
-    "link-uuid": "04daaaf6-8562-4f99-b02d-9f8d62aa3353",
+    "link-uuid": "8e0fbb19-0ce0-4460-9719-f0da77e2f31d",
     "title": "addBlankCell",
-    "content": "Type BlankCell Multiplicity 0..1"
+    "content": "Type BlankCell Multiplicity 0..1",
+    "timestamp": 1747875895845
   },
   "index.html": {
-    "link-uuid": "a330a4e6-df91-48fd-82aa-50366735c866",
+    "link-uuid": "fd1ff10d-c3f0-4efd-9abb-9cc0c5c4a844",
     "title": "Excel",
-    "content": "Creating a model and writing a file Series and column builders Column builder group Reading a file Creating a model and writing a file CapabilityLoader capabilityLoader = new CapabilityLoader();\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nRequirement&lt;ResourceSetRequirement, ResourceSet&gt; requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);\nResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);\n\nFile moduleFile = new File(&quot;target/module.xlsx&quot;).getCanonicalFile();\nResource excelResource = resourceSet.createResource(URI.createFileURI(moduleFile.getAbsolutePath()));\nWorkbook workbook = ExcelFactory.eINSTANCE.createWorkbook();\nexcelResource.getContents().add(workbook);\n\nModule module = getClass().getModule();\nModuleDescriptor descriptor = module.getDescriptor();\n\nRowSheet rowSheet = workbook.addRowSheet(module.getName());\n\nCellRow headerRow = rowSheet.addCellRow();\nheaderRow.addStringCell(&quot;Name&quot;);\nheaderRow.addStringCell(&quot;Modifiers&quot;);\nheaderRow.addStringCell(&quot;Version&quot;);\n\nfor (Requires req: descriptor.requires()) {\n\tCellRow reqRow = rowSheet.addCellRow();\n\treqRow.addStringCell(req.name());\n\n\tStringBuilder modifiersBuilder = new StringBuilder();\n\treq.modifiers().forEach(m -&gt; {\n\t\tif (!modifiersBuilder.isEmpty()) {\n\t\t\tmodifiersBuilder.append(&quot;, &quot;);\n\t\t}\n\t\tmodifiersBuilder.append(m);\n\t});\n\treqRow.addStringCell(modifiersBuilder.toString());\n\n\tOptional&lt;Version&gt; versionOpt = req.compiledVersion();\n\tif (versionOpt.isEmpty()) {\n\t\treqRow.addBlankCell();\n\t} else {\n\t\tVersion version = versionOpt.get();\n\t\treqRow.addStringCell(version.toString());\n\t}\n}\nexcelResource.save(null);\n Series and column builders CapabilityLoader capabilityLoader = new CapabilityLoader();\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nRequirement&lt;ResourceSetRequirement, ResourceSet&gt; requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);\nResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);\n\nFile moduleFile = new File(&quot;target/module-series.xlsx&quot;).getCanonicalFile();\nResource excelResource = resourceSet.createResource(URI.createFileURI(moduleFile.getAbsolutePath()));\nWorkbook workbook = ExcelFactory.eINSTANCE.createWorkbook();\nexcelResource.getContents().add(workbook);\n\nModule module = getClass().getModule();\nModuleDescriptor descriptor = module.getDescriptor();\n\nList&lt;ColumnBuilder&lt;Requires&gt;&gt; columnBuilders = new ArrayList&lt;&gt;();\n\ncolumnBuilders.add(TitleAndDescriptionColumnBuilder.stringColumnBuilder(\n\t\t&quot;Name&quot;,\n\t\t&quot;Requires name&quot;,\n\t\tRequires::name,\n\t\tnull));\n\ncolumnBuilders.add(TitleAndDescriptionColumnBuilder.stringColumnBuilder(\n\t\t&quot;Modifiers&quot;,\n\t\t&quot;Requires modifiers&quot;,\n\t\treq -&gt; {\n\t\t\tStringBuilder modifiersBuilder = new StringBuilder();\n\t\t\treq.modifiers().forEach(m -&gt; {\n\t\t\t\tif (!modifiersBuilder.isEmpty()) {\n\t\t\t\t\tmodifiersBuilder.append(&quot;, &quot;);\n\t\t\t\t}\n\t\t\t\tmodifiersBuilder.append(m);\n\t\t\t});\n\t\t\treturn modifiersBuilder.toString();\n\t\t},\n\t\tnull));\n\ncolumnBuilders.add(TitleAndDescriptionColumnBuilder.stringColumnBuilder(\n\t\t&quot;Version&quot;,\n\t\t&quot;Requires version&quot;,\n\t\treq -&gt; {\n\t\t\tOptional&lt;Version&gt; versionOpt = req.compiledVersion();\n\t\t\tif (versionOpt.isEmpty()) {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\tVersion version = versionOpt.get();\n\t\t\treturn version.toString();\n\t\t},\n\t\tnull));\n\nSeries&lt;Requires&gt; series = Series.of(\n\t\t&quot;Requires&quot;,\n\t\tcolumnBuilders,\n\t\tdescriptor.requires(),\n\t\ttrue);\n\nseries.generate(workbook);\n\nexcelResource.save(null);\n Column builder group ColumnBuilderGroup&lt;Requires&gt; requiresGroup = new ColumnBuilderGroup&lt;ModuleDescriptor.Requires&gt;(\n\t\t&quot;Requires&quot;,\n\t\t&quot;Information about requires&quot;,\n\t\tcolumnBuilders);\n\nSeries&lt;Requires&gt; groupSeries = Series.of(\n\t\t&quot;Requires group&quot;,\n\t\tCollections.singletonList(requiresGroup),\n\t\tdescriptor.requires(),\n\t\ttrue);\n\ngroupSeries.generate(workbook);\n Reading a file CapabilityLoader capabilityLoader = new CapabilityLoader();\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nRequirement&lt;ResourceSetRequirement, ResourceSet&gt; requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);\nResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);\n\nFile moduleFile = new File(&quot;target/module.xlsx&quot;).getCanonicalFile();\n\nResource excelResource = resourceSet.getResource(URI.createFileURI(moduleFile.getAbsolutePath()), true);\nfor (EObject root: excelResource.getContents()) {\n\tfor (Sheet sheet: ((Workbook) root).getSheets()) {\n\t\tSystem.out.println(sheet.getName() + &quot; &quot; + sheet.eClass().getName());\n\t\tfor (Row row: ((RowSheet) sheet).getRows()) {\n\t\t\tSystem.out.println(&quot;\t&quot; + row.getNumber() + &quot; &quot; + row.eClass().getName());\n\t\t\tfor (Cell cell: ((CellRow) row).getCells()) {\n\t\t\t\tSystem.out.println(&quot;\t\t&quot; + cell.getColumnIndex() + &quot; &quot; + cell.eClass().getName());\n\t\t\t\tif (cell instanceof StringCell) {\n\t\t\t\t\tSystem.out.println(&quot;\t\t\t&quot; + ((StringCell) cell).getValue());\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+    "content": "Creating a model and writing a file Series and column builders Column builder group Reading a file Creating a model and writing a file CapabilityLoader capabilityLoader = new CapabilityLoader();\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nRequirement&lt;ResourceSetRequirement, ResourceSet&gt; requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);\nResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);\n\nFile moduleFile = new File(&quot;target/module.xlsx&quot;).getCanonicalFile();\nResource excelResource = resourceSet.createResource(URI.createFileURI(moduleFile.getAbsolutePath()));\nWorkbook workbook = ExcelFactory.eINSTANCE.createWorkbook();\nexcelResource.getContents().add(workbook);\n\nModule module = getClass().getModule();\nModuleDescriptor descriptor = module.getDescriptor();\n\nRowSheet rowSheet = workbook.addRowSheet(module.getName());\n\nCellRow headerRow = rowSheet.addCellRow();\nheaderRow.addStringCell(&quot;Name&quot;);\nheaderRow.addStringCell(&quot;Modifiers&quot;);\nheaderRow.addStringCell(&quot;Version&quot;);\n\nfor (Requires req: descriptor.requires()) {\n\tCellRow reqRow = rowSheet.addCellRow();\n\treqRow.addStringCell(req.name());\n\n\tStringBuilder modifiersBuilder = new StringBuilder();\n\treq.modifiers().forEach(m -&gt; {\n\t\tif (!modifiersBuilder.isEmpty()) {\n\t\t\tmodifiersBuilder.append(&quot;, &quot;);\n\t\t}\n\t\tmodifiersBuilder.append(m);\n\t});\n\treqRow.addStringCell(modifiersBuilder.toString());\n\n\tOptional&lt;Version&gt; versionOpt = req.compiledVersion();\n\tif (versionOpt.isEmpty()) {\n\t\treqRow.addBlankCell();\n\t} else {\n\t\tVersion version = versionOpt.get();\n\t\treqRow.addStringCell(version.toString());\n\t}\n}\nexcelResource.save(null);\n Series and column builders CapabilityLoader capabilityLoader = new CapabilityLoader();\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nRequirement&lt;ResourceSetRequirement, ResourceSet&gt; requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);\nResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);\n\nFile moduleFile = new File(&quot;target/module-series.xlsx&quot;).getCanonicalFile();\nResource excelResource = resourceSet.createResource(URI.createFileURI(moduleFile.getAbsolutePath()));\nWorkbook workbook = ExcelFactory.eINSTANCE.createWorkbook();\nexcelResource.getContents().add(workbook);\n\nModule module = getClass().getModule();\nModuleDescriptor descriptor = module.getDescriptor();\n\nList&lt;ColumnBuilder&lt;Requires&gt;&gt; columnBuilders = new ArrayList&lt;&gt;();\n\ncolumnBuilders.add(TitleAndDescriptionColumnBuilder.stringColumnBuilder(\n\t\t&quot;Name&quot;,\n\t\t&quot;Requires name&quot;,\n\t\tRequires::name,\n\t\tnull));\n\ncolumnBuilders.add(TitleAndDescriptionColumnBuilder.stringColumnBuilder(\n\t\t&quot;Modifiers&quot;,\n\t\t&quot;Requires modifiers&quot;,\n\t\treq -&gt; {\n\t\t\tStringBuilder modifiersBuilder = new StringBuilder();\n\t\t\treq.modifiers().forEach(m -&gt; {\n\t\t\t\tif (!modifiersBuilder.isEmpty()) {\n\t\t\t\t\tmodifiersBuilder.append(&quot;, &quot;);\n\t\t\t\t}\n\t\t\t\tmodifiersBuilder.append(m);\n\t\t\t});\n\t\t\treturn modifiersBuilder.toString();\n\t\t},\n\t\tnull));\n\ncolumnBuilders.add(TitleAndDescriptionColumnBuilder.stringColumnBuilder(\n\t\t&quot;Version&quot;,\n\t\t&quot;Requires version&quot;,\n\t\treq -&gt; {\n\t\t\tOptional&lt;Version&gt; versionOpt = req.compiledVersion();\n\t\t\tif (versionOpt.isEmpty()) {\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\tVersion version = versionOpt.get();\n\t\t\treturn version.toString();\n\t\t},\n\t\tnull));\n\nSeries&lt;Requires&gt; series = Series.of(\n\t\t&quot;Requires&quot;,\n\t\tcolumnBuilders,\n\t\tdescriptor.requires(),\n\t\ttrue);\n\nseries.generate(workbook);\n\nexcelResource.save(null);\n Column builder group ColumnBuilderGroup&lt;Requires&gt; requiresGroup = new ColumnBuilderGroup&lt;ModuleDescriptor.Requires&gt;(\n\t\t&quot;Requires&quot;,\n\t\t&quot;Information about requires&quot;,\n\t\tcolumnBuilders);\n\nSeries&lt;Requires&gt; groupSeries = Series.of(\n\t\t&quot;Requires group&quot;,\n\t\tCollections.singletonList(requiresGroup),\n\t\tdescriptor.requires(),\n\t\ttrue);\n\ngroupSeries.generate(workbook);\n Reading a file CapabilityLoader capabilityLoader = new CapabilityLoader();\nProgressMonitor progressMonitor = new PrintStreamProgressMonitor();\nRequirement&lt;ResourceSetRequirement, ResourceSet&gt; requirement = ServiceCapabilityFactory.createRequirement(ResourceSet.class);\nResourceSet resourceSet = capabilityLoader.loadOne(requirement, progressMonitor);\n\nFile moduleFile = new File(&quot;target/module.xlsx&quot;).getCanonicalFile();\n\nResource excelResource = resourceSet.getResource(URI.createFileURI(moduleFile.getAbsolutePath()), true);\nfor (EObject root: excelResource.getContents()) {\n\tfor (Sheet sheet: ((Workbook) root).getSheets()) {\n\t\tSystem.out.println(sheet.getName() + &quot; &quot; + sheet.eClass().getName());\n\t\tfor (Row row: ((RowSheet) sheet).getRows()) {\n\t\t\tSystem.out.println(&quot;\t&quot; + row.getNumber() + &quot; &quot; + row.eClass().getName());\n\t\t\tfor (Cell cell: ((CellRow) row).getCells()) {\n\t\t\t\tSystem.out.println(&quot;\t\t&quot; + cell.getColumnIndex() + &quot; &quot; + cell.eClass().getName());\n\t\t\t\tif (cell instanceof StringCell) {\n\t\t\t\t\tSystem.out.println(&quot;\t\t\t&quot; + ((StringCell) cell).getValue());\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+    "timestamp": 1747875895752
   },
   "references/eClassifiers/Workbook/references/eOperations/addRowSheet-0/references/eParameters/name/index.html": {
     "path": "Workbook/Operations/addRowSheet/Parameters/name",
-    "link-uuid": "37008cf0-c927-428d-9711-e2e7d9a2e87b",
+    "link-uuid": "c3919d96-adcb-4726-aa4b-87177d9ea3e0",
     "title": "name",
-    "content": "Type EString Multiplicity 0..1"
+    "content": "Type EString Multiplicity 0..1",
+    "timestamp": 1747875896051
   },
   "references/eClassifiers/CellRow/references/eStructuralFeatures/cells/index.html": {
     "path": "CellRow/References/cells",
-    "link-uuid": "b4c90c70-e2eb-49e1-b810-89f8f65aee72",
+    "link-uuid": "4a97c424-289c-4fa3-bcad-4708c9a1b5f0",
     "title": "cells",
-    "content": "Type Cell Multiplicity 0..*"
+    "content": "Type Cell Multiplicity 0..*",
+    "timestamp": 1747875895878
   },
   "references/eClassifiers/Row/inheritance.html": {
     "path": "Row/Inheritance",
-    "link-uuid": "4c5c568f-d90b-4718-96cb-4430fc0be08d",
+    "link-uuid": "cd091f1c-201e-4243-9b7b-dfdc10d35233",
     "title": "Inheritance",
-    "content": "Subtypes "
+    "content": "Subtypes ",
+    "timestamp": 1747875895999
   },
   "references/eClassifiers/CellRow/inheritance.html": {
     "path": "CellRow/Inheritance",
-    "link-uuid": "481a2f59-1bad-4843-8c0a-ce568ba18922",
+    "link-uuid": "256c6bc3-0bcb-4ae6-888f-c1ffe499cc69",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895832
   },
   "references/eClassifiers/DateCell/inheritance.html": {
     "path": "DateCell/Inheritance",
-    "link-uuid": "02a32966-0aa8-4be9-b9d4-f4b4ec7bad1c",
+    "link-uuid": "29e3b732-5030-45a1-a8ff-925686d0a377",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895888
   },
   "references/eClassifiers/Row/references/eStructuralFeatures/number/index.html": {
     "path": "Row/Attributes/number",
-    "link-uuid": "5850f25c-e118-41af-af02-a3f7c405704e",
+    "link-uuid": "1926a739-9553-45e9-a0a9-cada253c5e6f",
     "title": "number",
-    "content": "Type EInt Multiplicity 0..1"
+    "content": "Type EInt Multiplicity 0..1",
+    "timestamp": 1747875896000
   },
   "references/eClassifiers/NumericCell/references/eStructuralFeatures/value/index.html": {
     "path": "NumericCell/Attributes/value",
-    "link-uuid": "0bdd3bab-dbc0-4673-a431-5c2c42875902",
+    "link-uuid": "2b48ca1e-d4ed-4bf2-bd57-f505463c45e0",
     "title": "value",
-    "content": "Type EDouble Multiplicity 0..1"
+    "content": "Type EDouble Multiplicity 0..1",
+    "timestamp": 1747875895972
   },
   "references/eClassifiers/Workbook/index.html": {
-    "link-uuid": "5b82d7a9-dfe2-4631-9c1f-1b10cca4486d",
+    "link-uuid": "b7b4b7a6-338b-4c27-994d-f6bb491fc1e5",
     "title": "Workbook",
-    "content": "Excel workbook containing sheets of possibly different type"
+    "content": "Excel workbook containing sheets of possibly different type",
+    "timestamp": 1747875896044
   },
   "references/eClassifiers/CellRow/references/eOperations/addBooleanCell-1/index.html": {
     "path": "CellRow/Operations/addBooleanCell",
-    "link-uuid": "5ea978fe-84cc-438b-9206-a5b886e86b8d",
+    "link-uuid": "97159aad-4681-4982-9e0c-15e9dc41064a",
     "title": "addBooleanCell",
-    "content": "Type BooleanCell Multiplicity 0..1"
+    "content": "Type BooleanCell Multiplicity 0..1",
+    "timestamp": 1747875895847
   },
   "references/eClassifiers/CellRow/references/eOperations/addEObjectCell-3/references/eParameters/value/index.html": {
     "path": "CellRow/Operations/addEObjectCell/Parameters/value",
-    "link-uuid": "bf08d8f9-5d37-46c5-b880-d3a30f5c0230",
+    "link-uuid": "4bb9cef6-3608-4c30-a13e-f2bb1f1eaf5e",
     "title": "value",
-    "content": "Type EObject Multiplicity 0..1"
+    "content": "Type EObject Multiplicity 0..1",
+    "timestamp": 1747875895860
   },
   "references/eClassifiers/CellRow/references/eOperations/addErrorCell-4/references/eParameters/value/index.html": {
     "path": "CellRow/Operations/addErrorCell/Parameters/value",
-    "link-uuid": "e2f7d2b5-47ff-441c-b8cd-9c9e822513da",
+    "link-uuid": "435b0cf4-13ac-424d-b523-9651487ecc4b",
     "title": "value",
-    "content": "Type EByte Multiplicity 0..1"
+    "content": "Type EByte Multiplicity 0..1",
+    "timestamp": 1747875895864
   },
   "references/eClassifiers/ErrorCell/inheritance.html": {
     "path": "ErrorCell/Inheritance",
-    "link-uuid": "c90cf526-6d9c-40f1-8a41-a1171c7687a6",
+    "link-uuid": "c6935684-48f5-4956-aed6-1871f6c869ac",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895930
   },
   "references/eClassifiers/BooleanCell/inheritance.html": {
     "path": "BooleanCell/Inheritance",
-    "link-uuid": "82deee5a-d6ef-48d7-9827-faaa29c828fa",
+    "link-uuid": "89eca9a0-9bc5-4a8f-839f-632145be4e59",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895772
   },
   "references/eClassifiers/EObjectCell/references/eStructuralFeatures/value/index.html": {
     "path": "EObjectCell/References/value",
-    "link-uuid": "c0bf6ba0-789a-42b9-95a1-d7a04c89825e",
+    "link-uuid": "a32f6de5-c64a-4d62-96c9-e04e2982d3a2",
     "title": "value",
-    "content": "Type EObject Multiplicity 0..1"
+    "content": "Type EObject Multiplicity 0..1",
+    "timestamp": 1747875895905
   },
   "references/eClassifiers/CellRow/references/eOperations/addStringCell-7/references/eParameters/value/index.html": {
     "path": "CellRow/Operations/addStringCell/Parameters/value",
-    "link-uuid": "12f76812-809e-4d12-8b32-ad64d7cbf575",
+    "link-uuid": "fb734249-13ad-4148-bec5-ec36e26802fc",
     "title": "value",
-    "content": "Type EString Multiplicity 0..1"
+    "content": "Type EString Multiplicity 0..1",
+    "timestamp": 1747875895876
   },
   "references/eClassifiers/BooleanCell/references/eStructuralFeatures/value/index.html": {
     "path": "BooleanCell/Attributes/value",
-    "link-uuid": "7a3618d6-288d-4ce4-bc09-34c11bba570c",
+    "link-uuid": "d3180e18-af0a-4c00-91e6-8877ade69cec",
     "title": "value",
-    "content": "Type EBoolean Multiplicity 0..1"
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1747875895775
   },
   "references/eClassifiers/CellRow/references/eOperations/addBooleanCell-1/references/eParameters/value/index.html": {
     "path": "CellRow/Operations/addBooleanCell/Parameters/value",
-    "link-uuid": "b242ca57-47da-4303-a432-8e5955dbcadc",
+    "link-uuid": "e720ffbc-7e71-45c3-a265-1fd543a08fdd",
     "title": "value",
-    "content": "Type EBoolean Multiplicity 0..1"
+    "content": "Type EBoolean Multiplicity 0..1",
+    "timestamp": 1747875895850
   },
   "references/eClassifiers/Sheet/references/eStructuralFeatures/name/index.html": {
     "path": "Sheet/Attributes/name",
-    "link-uuid": "96d4f985-a7cd-45ce-9ad2-3b8699e7c0c6",
+    "link-uuid": "b534fbb3-0f0d-4bdb-b7d5-a15f2e1ded61",
     "title": "name",
-    "content": "Type EString Multiplicity 0..1"
+    "content": "Type EString Multiplicity 0..1",
+    "timestamp": 1747875896027
   },
   "references/eClassifiers/Cell/references/eStructuralFeatures/columnIndex/index.html": {
     "path": "Cell/Attributes/columnIndex",
-    "link-uuid": "511cf3b4-5b86-4c62-a7bf-ac6fd309f757",
+    "link-uuid": "1d665e6c-6c79-461b-83f9-fe41926131ee",
     "title": "columnIndex",
-    "content": "Type EInt Multiplicity 0..1"
+    "content": "Type EInt Multiplicity 0..1",
+    "timestamp": 1747875895822
   },
   "references/eClassifiers/StringCell/inheritance.html": {
     "path": "StringCell/Inheritance",
-    "link-uuid": "809ea8a4-f394-4df2-af76-1f22cc23d6bd",
+    "link-uuid": "18be0b8e-c19b-45ec-b007-fad6f07f5d3b",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875896035
   },
   "references/eClassifiers/CellRow/references/eOperations/addNumericCell-5/references/eParameters/value/index.html": {
     "path": "CellRow/Operations/addNumericCell/Parameters/value",
-    "link-uuid": "6b895125-9389-42ed-b6c0-8fe8acff1488",
+    "link-uuid": "095d61c2-73db-4c61-b229-64d80bc903a7",
     "title": "value",
-    "content": "Type EDouble Multiplicity 0..1"
+    "content": "Type EDouble Multiplicity 0..1",
+    "timestamp": 1747875895867
   },
   "references/eClassifiers/RowSheet/inheritance.html": {
     "path": "RowSheet/Inheritance",
-    "link-uuid": "11b8dba5-4f34-4ff3-aa60-1f799e4f689a",
+    "link-uuid": "dc20b2af-340a-4677-a0cf-113a9d205926",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875896009
   },
   "references/eClassifiers/CellRow/references/eOperations/addStringCell-7/index.html": {
     "path": "CellRow/Operations/addStringCell",
-    "link-uuid": "2fb575bf-a424-4350-ac88-e8587862325c",
+    "link-uuid": "8c59de38-6dba-4cbd-9583-1225f09d9a84",
     "title": "addStringCell",
-    "content": "Type StringCell Multiplicity 0..1"
+    "content": "Type StringCell Multiplicity 0..1",
+    "timestamp": 1747875895873
   },
   "references/eClassifiers/NumericCell/inheritance.html": {
     "path": "NumericCell/Inheritance",
-    "link-uuid": "d69c642e-a50f-4745-8228-99f994bdbc12",
+    "link-uuid": "b0d6f067-52fa-41eb-ac34-5785e625107c",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895969
   },
   "references/eClassifiers/ReferenceCell/inheritance.html": {
     "path": "ReferenceCell/Inheritance",
-    "link-uuid": "c05fb15a-7df9-498e-8f49-0352aecbd9de",
+    "link-uuid": "14104b74-f117-4983-afa7-782c5cd3d249",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895984
   },
   "references/eClassifiers/EObjectCell/inheritance.html": {
     "path": "EObjectCell/Inheritance",
-    "link-uuid": "90dc09df-0433-41ba-8c40-43341e513246",
+    "link-uuid": "d7a091d8-ef79-4491-9336-e13fb709f9e1",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895902
   },
   "references/eClassifiers/BlankCell/inheritance.html": {
     "path": "BlankCell/Inheritance",
-    "link-uuid": "21873a97-8be8-4f2b-9a0e-1d97710d7fbd",
+    "link-uuid": "9c2a3f9e-0f07-4e48-b9c6-810cd4ab5bfe",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895761
   },
   "references/eClassifiers/ListSheet/inheritance.html": {
     "path": "ListSheet/Inheritance",
-    "link-uuid": "5eb9f2ed-7671-4329-b77a-bc96fcd24d73",
+    "link-uuid": "9aae4e3d-2772-44f2-8a72-abbbfa0fa7e3",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895957
   },
   "references/eClassifiers/EObjectRow/references/eStructuralFeatures/contents/index.html": {
     "path": "EObjectRow/References/contents",
-    "link-uuid": "cabd59eb-5e79-4a0e-8d8a-7299c719f37b",
+    "link-uuid": "6f8e8ad6-7b49-4400-882d-2b9e6062132a",
     "title": "contents",
-    "content": "Type EObject Multiplicity 0..1"
+    "content": "Type EObject Multiplicity 0..1",
+    "timestamp": 1747875895919
   },
   "references/eClassifiers/ListRow/inheritance.html": {
     "path": "ListRow/Inheritance",
-    "link-uuid": "7eb836b0-0e29-44f9-a1f0-106d0c62a385",
+    "link-uuid": "816cb187-23fa-402a-8f51-d9fcb89abfa2",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895943
   },
   "references/eClassifiers/ListRow/references/eStructuralFeatures/contents/index.html": {
     "path": "ListRow/References/contents",
-    "link-uuid": "73e6cb88-1866-4f60-aaca-d2171b1a4de7",
+    "link-uuid": "57abda5f-8a43-4403-a990-47afae9bff9f",
     "title": "contents",
-    "content": "Type EObject Multiplicity 0..*"
+    "content": "Type EObject Multiplicity 0..*",
+    "timestamp": 1747875895945
   },
   "references/eClassifiers/CellRow/references/eOperations/addErrorCell-4/index.html": {
     "path": "CellRow/Operations/addErrorCell",
-    "link-uuid": "e81a636b-d8d0-4f29-9ba9-0f2f0f75421d",
+    "link-uuid": "7dda7236-8782-4102-bfe4-991cda71a926",
     "title": "addErrorCell",
-    "content": "Type ErrorCell Multiplicity 0..1"
+    "content": "Type ErrorCell Multiplicity 0..1",
+    "timestamp": 1747875895861
   },
   "references/eClassifiers/CellRow/references/eOperations/addDateCell-2/references/eParameters/value/index.html": {
     "path": "CellRow/Operations/addDateCell/Parameters/value",
-    "link-uuid": "8bc83b25-96b8-48ac-88e2-19ea4600d651",
+    "link-uuid": "f6014add-2c65-4e65-9996-a10e44f34c49",
     "title": "value",
-    "content": "Type EDate Multiplicity 0..1"
+    "content": "Type EDate Multiplicity 0..1",
+    "timestamp": 1747875895854
   },
   "references/eClassifiers/CellRow/references/eOperations/addEObjectCell-3/index.html": {
     "path": "CellRow/Operations/addEObjectCell",
-    "link-uuid": "7420a284-53ad-42ca-b93a-bbc6f64db6db",
+    "link-uuid": "2289d99e-659e-4f75-ac56-8c90c1f1531c",
     "title": "addEObjectCell",
-    "content": "Type EObjectCell Multiplicity 0..1"
+    "content": "Type EObjectCell Multiplicity 0..1",
+    "timestamp": 1747875895856
   },
   "references/eClassifiers/DateCell/references/eStructuralFeatures/value/index.html": {
     "path": "DateCell/Attributes/value",
-    "link-uuid": "68422f7c-bc8a-470a-8f52-40459ff64001",
+    "link-uuid": "bbf92699-e3a5-4b45-8ae5-21f5d30877d2",
     "title": "value",
-    "content": "Type EDate Multiplicity 0..1"
+    "content": "Type EDate Multiplicity 0..1",
+    "timestamp": 1747875895891
   },
   "references/eClassifiers/Workbook/references/eStructuralFeatures/sheets/index.html": {
     "path": "Workbook/References/sheets",
-    "link-uuid": "87426a61-f90d-4ca3-9673-9de2e0fd427a",
+    "link-uuid": "0277b3d3-4965-43d9-813e-eb2aaa3cb4b0",
     "title": "sheets",
-    "content": "Type Sheet Multiplicity 0..*"
+    "content": "Type Sheet Multiplicity 0..*",
+    "timestamp": 1747875896052
   },
   "references/eClassifiers/CellRow/references/eOperations/addDateCell-2/index.html": {
     "path": "CellRow/Operations/addDateCell",
-    "link-uuid": "d2ca9bfa-a77d-4287-97b7-339e8f827be3",
+    "link-uuid": "6b26c01b-ec11-4a23-827b-bc354a40006f",
     "title": "addDateCell",
-    "content": "Type DateCell Multiplicity 0..1"
+    "content": "Type DateCell Multiplicity 0..1",
+    "timestamp": 1747875895851
   },
   "references/eClassifiers/CellRow/references/eOperations/addReferenceCell-6/references/eParameters/target/index.html": {
     "path": "CellRow/Operations/addReferenceCell/Parameters/target",
-    "link-uuid": "9131bceb-f7a4-47d8-ba88-1e7b846ac00a",
+    "link-uuid": "e7c8105f-82f4-47e4-946a-0e3277552bc7",
     "title": "target",
-    "content": "Type EObject Multiplicity 0..1"
+    "content": "Type EObject Multiplicity 0..1",
+    "timestamp": 1747875895872
   },
   "references/eClassifiers/ListSheet/references/eStructuralFeatures/contents/index.html": {
     "path": "ListSheet/References/contents",
-    "link-uuid": "3e0124db-da37-4b95-8b5a-24171f249e06",
+    "link-uuid": "5a4f791c-729e-4a58-8789-53bad42f3ada",
     "title": "contents",
-    "content": "Type EObject Multiplicity 0..*"
+    "content": "Type EObject Multiplicity 0..*",
+    "timestamp": 1747875895959
   },
   "references/eClassifiers/ReferenceCell/references/eStructuralFeatures/target/index.html": {
     "path": "ReferenceCell/References/target",
-    "link-uuid": "59aed798-8196-4c4a-964f-65f274fbce13",
+    "link-uuid": "e502b475-fcb8-456d-a549-f2e6da791f52",
     "title": "target",
-    "content": "Type EObject Multiplicity 0..1"
+    "content": "Type EObject Multiplicity 0..1",
+    "timestamp": 1747875895986
   },
   "references/eClassifiers/Workbook/references/eOperations/addRowSheet-0/index.html": {
     "path": "Workbook/Operations/addRowSheet",
-    "link-uuid": "065acf77-c951-4dca-9db5-adebb49ab4f2",
+    "link-uuid": "47010c73-219d-4ee5-a0df-46f609911610",
     "title": "addRowSheet",
-    "content": "Type RowSheet Multiplicity 0..1"
+    "content": "Type RowSheet Multiplicity 0..1",
+    "timestamp": 1747875896048
   },
   "references/eClassifiers/ErrorCell/references/eStructuralFeatures/value/index.html": {
     "path": "ErrorCell/Attributes/value",
-    "link-uuid": "9fee327f-09dd-4285-a316-1b9e9320c27d",
+    "link-uuid": "60c0f694-83e2-4d7f-9f9b-7f90b298b89d",
     "title": "value",
-    "content": "Type EByte Multiplicity 0..1"
+    "content": "Type EByte Multiplicity 0..1",
+    "timestamp": 1747875895932
   },
   "references/eClassifiers/CellRow/references/eOperations/addNumericCell-5/index.html": {
     "path": "CellRow/Operations/addNumericCell",
-    "link-uuid": "e179095a-fbe5-4340-9acc-0b505ebe0bc0",
+    "link-uuid": "3929564d-c1cc-4f9c-be45-11a68d2390f3",
     "title": "addNumericCell",
-    "content": "Type NumericCell Multiplicity 0..1"
+    "content": "Type NumericCell Multiplicity 0..1",
+    "timestamp": 1747875895865
   },
   "references/eClassifiers/CellRow/references/eOperations/addReferenceCell-6/index.html": {
     "path": "CellRow/Operations/addReferenceCell",
-    "link-uuid": "b6ef4aca-b561-4aad-a6b0-3ebc50a16281",
+    "link-uuid": "59b0ffd7-5476-42fc-9dbc-d5957aa41bb9",
     "title": "addReferenceCell",
-    "content": "Type ReferenceCell Multiplicity 0..1"
+    "content": "Type ReferenceCell Multiplicity 0..1",
+    "timestamp": 1747875895870
   },
   "references/eClassifiers/EObjectRow/inheritance.html": {
     "path": "EObjectRow/Inheritance",
-    "link-uuid": "c5659f2f-994c-44d7-ac12-3f6882175d9b",
+    "link-uuid": "b0f327d4-e095-4d1a-97fb-e4ceddab0a26",
     "title": "Inheritance",
-    "content": "Supertypes "
+    "content": "Supertypes ",
+    "timestamp": 1747875895917
   }
 }
