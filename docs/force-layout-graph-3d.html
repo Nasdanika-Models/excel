@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="EN">
   <head>
-    <title>Default Graph</title>
+    <title>Force Graph 3D</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" id="nsd-bootstrap-theme-stylesheet"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -87,11 +87,14 @@ window.nsdJsTreeSearchCallback = function(str, node) {
  
 </head>
   <body>
-    <div tabindex="-1" id="nsd_yn" class="modal">
+    <div tabindex="-1" id="nsd_1mj" class="modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">Hover mouse over nodes elements to display tooltips.
 Double-click on nodes to navigate go documentation.
+Left click - rotate.
+Mouse wheel - zoom.
+Right click - pan.
 Drag to rearrange.
 </div>
         </div>
@@ -117,9 +120,9 @@ Drag to rearrange.
           <ul class="navbar navbar-light navbar-expand-lg">
             <a href="index.html" title="A model of MS Excel and CSV objects" data-nsd-label-uuid="6e8e8a04-eaaf-4504-bb8e-4cab042fdda0" class="navbar-brand">
               <img src="https://docs.nasdanika.org/images/excel.svg" class="nsd-app-label-icon"/>Excel</a>
-            <button type="button" data-toggle="collapse" data-target="#nsd_y5" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+            <button type="button" data-toggle="collapse" data-target="#nsd_1m1" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span>
             </button>
-            <div id="nsd_y5" class="collapse navbar-collapse">
+            <div id="nsd_1m1" class="collapse navbar-collapse">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                   <a href="classifiers.html" data-nsd-label-uuid="ada8231c-898a-4156-929b-cd3110d4dd46" class="nav-link">Classifiers</a>
@@ -131,10 +134,10 @@ Drag to rearrange.
                   <li data-nsd-label-uuid="2c007fcc-67e0-458f-b040-4c06b0800bab" class="dropdown">
                     <a role="button" data-toggle="dropdown" class="nav-link dropdown-toggle">
                       <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</a>
-                    <div class="dropdown-menu"><span data-nsd-label-uuid="78d60612-85e2-4dbf-816d-ae0e3a768f31" class="active dropdown-item">Default Graph</span>
+                    <div class="dropdown-menu">
+                      <a href="default-graph.html" data-nsd-label-uuid="78d60612-85e2-4dbf-816d-ae0e3a768f31" class="dropdown-item">Default Graph</a>
                       <a href="circular-layout-graph.html" data-nsd-label-uuid="aff8b7a4-22a7-4536-a534-7a900399528d" class="dropdown-item">Circular Graph</a>
-                      <a href="force-layout-graph.html" data-nsd-label-uuid="9d526a11-36e1-43d6-bf68-21ac2f7b9c29" class="dropdown-item">Force Graph</a>
-                      <a href="force-layout-graph-3d.html" data-nsd-label-uuid="7c5f5acd-d0c6-4358-88b5-b7481971b35c" class="dropdown-item">Force Graph 3D</a>
+                      <a href="force-layout-graph.html" data-nsd-label-uuid="9d526a11-36e1-43d6-bf68-21ac2f7b9c29" class="dropdown-item">Force Graph</a><span data-nsd-label-uuid="7c5f5acd-d0c6-4358-88b5-b7481971b35c" class="active dropdown-item">Force Graph 3D</span>
                       <div title="With dependencies and sub-packages" class="dropdown-divider"></div>
                       <a href="default-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="432da8d0-9971-4379-b27a-f05ba3965b0f" class="dropdown-item">Default Graph</a>
                       <a href="circular-layout-graph-with-dependencies-and-subpackages.html" data-nsd-label-uuid="6aa901b9-32ff-4a2e-bba4-c94d75065255" class="dropdown-item">Circular Graph</a>
@@ -187,7 +190,7 @@ Drag to rearrange.
               <img src="https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif" class="nsd-app-label-icon"/>Workbook</a>
           </div>
         </div>
-        <div data-nsd-label-uuid="78d60612-85e2-4dbf-816d-ae0e3a768f31" data-nsd-action-uris="uuid:78d60612-85e2-4dbf-816d-ae0e3a768f31" class="col nsd-app-content-panel">
+        <div data-nsd-label-uuid="7c5f5acd-d0c6-4358-88b5-b7481971b35c" data-nsd-action-uris="uuid:7c5f5acd-d0c6-4358-88b5-b7481971b35c" class="col nsd-app-content-panel">
           <div class="container-fluid">
             <div class="row nsd-app-content-panel-breadcrumb-row">
               <div class="col">
@@ -195,7 +198,7 @@ Drag to rearrange.
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><span data-nsd-label-uuid="2c007fcc-67e0-458f-b040-4c06b0800bab"><img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/16/external-diagram-seo-media-dreamstale-lineal-dreamstale.png" class="nsd-app-label-icon"/>Graphs</span>
                     </li>
-                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="78d60612-85e2-4dbf-816d-ae0e3a768f31">Default Graph</span>
+                    <li class="breadcrumb-item active"><span data-nsd-label-uuid="7c5f5acd-d0c6-4358-88b5-b7481971b35c">Force Graph 3D</span>
                     </li>
                   </ol>
                 </nav>
@@ -203,7 +206,7 @@ Drag to rearrange.
             </div>
             <div class="row nsd-app-content-panel-title-and-items-row">
               <div class="col-auto">
-                <H1><span data-nsd-label-uuid="78d60612-85e2-4dbf-816d-ae0e3a768f31" class="nsd-app-content-panel-title">Default Graph<a data-toggle="modal" data-target="#nsd_yn" href="#" title="A fixed force-layout graph of package classifiers showing relationships between them" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
+                <H1><span data-nsd-label-uuid="7c5f5acd-d0c6-4358-88b5-b7481971b35c" class="nsd-app-content-panel-title">Force Graph 3D<a data-toggle="modal" data-target="#nsd_1mj" href="#" title="A live force-layout graph of package classifiers showing relationships between them" style="vertical-align:super;font-size:x-small;margin-left:0.2em"><span class="far fa-question-circle nsd-app-label-icon"></span></a></span>
                 </H1>
               </div>
             </div>
@@ -211,34 +214,312 @@ Drag to rearrange.
               <div class="col">
                 <div class="container-fluid">
                   <div class="row">
-                    <div class="col"><div id="graph-container-52" class="row" style="height:70vh;width:100%">
+                    <div class="col"><div id="force-graph-55" class="row" style="height:70vh;width:100%">
 </div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		var dom = document.getElementById("graph-container-52");
-		var myChart = echarts.init(dom, null, {
-			render: "canvas",
-			useDirtyRect: false
-		});
-		var option = {"series":[{"type":"graph","emphasis":{"focus":"adjacency"},"data":[{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"CellRow@ecore://nasdanika.org/models/excel","name":"CellRow","value":{"externalLink":"references/eClassifiers/CellRow/index.html"},"x":504.22021021909774,"y":275.3714871266335},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ListRow@ecore://nasdanika.org/models/excel","name":"ListRow","value":{"externalLink":"references/eClassifiers/ListRow/index.html"},"x":170.65043326698597,"y":625.2045417658627},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"NumericCell@ecore://nasdanika.org/models/excel","name":"NumericCell","value":{"externalLink":"references/eClassifiers/NumericCell/index.html"},"x":674.916609798105,"y":273.2371287177591},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"DateCell@ecore://nasdanika.org/models/excel","name":"DateCell","value":{"externalLink":"references/eClassifiers/DateCell/index.html"},"x":390.08854503739497,"y":249.01418670871809},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"StringCell@ecore://nasdanika.org/models/excel","name":"StringCell","value":{"externalLink":"references/eClassifiers/StringCell/index.html"},"x":679.588983157893,"y":184.48433796124854},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"BlankCell@ecore://nasdanika.org/models/excel","name":"BlankCell","value":{"externalLink":"references/eClassifiers/BlankCell/index.html"},"x":446.8461938680743,"y":88.0099021601559},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ListSheet@ecore://nasdanika.org/models/excel","name":"ListSheet","value":{"externalLink":"references/eClassifiers/ListSheet/index.html"},"x":768.5799120686614,"y":800.0},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ErrorCell@ecore://nasdanika.org/models/excel","name":"ErrorCell","value":{"externalLink":"references/eClassifiers/ErrorCell/index.html"},"x":602.1351693901764,"y":337.2751477613813},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"ReferenceCell@ecore://nasdanika.org/models/excel","name":"ReferenceCell","value":{"externalLink":"references/eClassifiers/ReferenceCell/index.html"},"x":386.9139216844373,"y":153.77251331285967},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"EObjectCell@ecore://nasdanika.org/models/excel","name":"EObjectCell","value":{"externalLink":"references/eClassifiers/EObjectCell/index.html"},"x":537.3617941132413,"y":67.36088258886979},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"EObjectRow@ecore://nasdanika.org/models/excel","name":"EObjectRow","value":{"externalLink":"references/eClassifiers/EObjectRow/index.html"},"x":112.46341374523001,"y":497.82327803681807},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"RowSheet@ecore://nasdanika.org/models/excel","name":"RowSheet","value":{"externalLink":"references/eClassifiers/RowSheet/index.html"},"x":491.3382021683599,"y":557.788718593909},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Sheet@ecore://nasdanika.org/models/excel","name":"Sheet","value":{"externalLink":"references/eClassifiers/Sheet/index.html"},"x":620.4406603011207,"y":735.1709369699335},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Workbook@ecore://nasdanika.org/models/excel","name":"Workbook","value":{"externalLink":"references/eClassifiers/Workbook/index.html"},"x":508.0919944076297,"y":743.5629336314017},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Row@ecore://nasdanika.org/models/excel","name":"Row","value":{"externalLink":"references/eClassifiers/Row/index.html"},"x":310.8242584698925,"y":484.02082065380046},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"BooleanCell@ecore://nasdanika.org/models/excel","name":"BooleanCell","value":{"externalLink":"references/eClassifiers/BooleanCell/index.html"},"x":628.947038684875,"y":105.56717261734991},{"symbol":"image://https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/icons/EClass.gif","id":"Cell@ecore://nasdanika.org/models/excel","name":"Cell","value":{"externalLink":"references/eClassifiers/Cell/index.html"},"x":542.6938314160822,"y":187.8226716932971}],"symbolSize":20,"roam":true,"layout":"none","links":[{"source":0,"target":2},{"source":0,"target":3},{"source":0,"target":4},{"source":0,"target":5},{"source":0,"target":7},{"source":0,"target":8},{"source":0,"target":9},{"source":0,"target":14},{"source":0,"target":15},{"source":0,"target":16},{"source":1,"target":14},{"source":2,"target":16},{"source":3,"target":16},{"source":4,"target":16},{"source":5,"target":16},{"source":6,"target":12},{"source":7,"target":16},{"source":8,"target":16},{"source":9,"target":16},{"source":10,"target":14},{"source":11,"target":0},{"source":11,"target":12},{"source":11,"target":14},{"source":12,"target":6},{"source":12,"target":11},{"source":12,"target":13},{"source":13,"target":12},{"source":13,"target":11},{"source":14,"target":10},{"source":14,"target":1},{"source":14,"target":0},{"source":14,"target":11},{"source":15,"target":16},{"source":16,"target":7},{"source":16,"target":4},{"source":16,"target":8},{"source":16,"target":5},{"source":16,"target":3},{"source":16,"target":15},{"source":16,"target":2},{"source":16,"target":9},{"source":16,"target":0}],"draggable":true,"label":{"show":true,"position":"right"},"lineStyle":{"color":"source","curveness":0}}]};
-		option.tooltip = {};
-		option.series[0].tooltip = {
-			formatter: function(arg) {
-				return arg.value ? arg.value.description : null;
-			}
-		};
-		myChart.setOption(option);
-		myChart.on("dblclick", function(params) {
-			if (params.value) {
-				if (params.value.link) {
-					window.open(params.value.link, "_self");
-				} else if (params.value.externalLink) {
-					window.open(params.value.externalLink);
+<script type="module">
+	import { CSS2DRenderer, CSS2DObject } from 'https://esm.sh/three/examples/jsm/renderers/CSS2DRenderer.js';
+
+	        new ForceGraph3D(
+                document.getElementById('force-graph-55'), 
+                {
+                        extraRenderers: [
+                                new CSS2DRenderer()
+                        ]
+                })
+                .graphData({
+          "nodes": [
+            {
+              "name": "CellRow",
+              "id": "CellRow@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/CellRow/index.html"}]
+            },
+            {
+              "name": "ListRow",
+              "id": "ListRow@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/ListRow/index.html"}]
+            },
+            {
+              "name": "NumericCell",
+              "id": "NumericCell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/NumericCell/index.html"}]
+            },
+            {
+              "name": "DateCell",
+              "id": "DateCell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/DateCell/index.html"}]
+            },
+            {
+              "name": "StringCell",
+              "id": "StringCell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/StringCell/index.html"}]
+            },
+            {
+              "name": "BlankCell",
+              "id": "BlankCell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/BlankCell/index.html"}]
+            },
+            {
+              "name": "ListSheet",
+              "id": "ListSheet@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/ListSheet/index.html"}]
+            },
+            {
+              "name": "ErrorCell",
+              "id": "ErrorCell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/ErrorCell/index.html"}]
+            },
+            {
+              "name": "ReferenceCell",
+              "id": "ReferenceCell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/ReferenceCell/index.html"}]
+            },
+            {
+              "name": "EObjectCell",
+              "id": "EObjectCell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/EObjectCell/index.html"}]
+            },
+            {
+              "name": "EObjectRow",
+              "id": "EObjectRow@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/EObjectRow/index.html"}]
+            },
+            {
+              "name": "RowSheet",
+              "id": "RowSheet@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/RowSheet/index.html"}]
+            },
+            {
+              "name": "Sheet",
+              "id": "Sheet@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/Sheet/index.html"}]
+            },
+            {
+              "name": "Workbook",
+              "id": "Workbook@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/Workbook/index.html"}]
+            },
+            {
+              "name": "Row",
+              "id": "Row@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/Row/index.html"}]
+            },
+            {
+              "name": "BooleanCell",
+              "id": "BooleanCell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/BooleanCell/index.html"}]
+            },
+            {
+              "name": "Cell",
+              "id": "Cell@ecore://nasdanika.org/models/excel",
+              "value": [{"externalLink": "references/eClassifiers/Cell/index.html"}]
+            }
+          ],
+          "links": [
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "NumericCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "DateCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "StringCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "BlankCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "ErrorCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "ReferenceCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "EObjectCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "Row@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "BooleanCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "CellRow@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "ListRow@ecore://nasdanika.org/models/excel",
+              "target": "Row@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "NumericCell@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "DateCell@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "StringCell@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "BlankCell@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "ListSheet@ecore://nasdanika.org/models/excel",
+              "target": "Sheet@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "ErrorCell@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "ReferenceCell@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "EObjectCell@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "EObjectRow@ecore://nasdanika.org/models/excel",
+              "target": "Row@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "RowSheet@ecore://nasdanika.org/models/excel",
+              "target": "CellRow@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "RowSheet@ecore://nasdanika.org/models/excel",
+              "target": "Sheet@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "RowSheet@ecore://nasdanika.org/models/excel",
+              "target": "Row@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Sheet@ecore://nasdanika.org/models/excel",
+              "target": "ListSheet@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Sheet@ecore://nasdanika.org/models/excel",
+              "target": "RowSheet@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Sheet@ecore://nasdanika.org/models/excel",
+              "target": "Workbook@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Workbook@ecore://nasdanika.org/models/excel",
+              "target": "Sheet@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Workbook@ecore://nasdanika.org/models/excel",
+              "target": "RowSheet@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Row@ecore://nasdanika.org/models/excel",
+              "target": "EObjectRow@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Row@ecore://nasdanika.org/models/excel",
+              "target": "ListRow@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Row@ecore://nasdanika.org/models/excel",
+              "target": "CellRow@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Row@ecore://nasdanika.org/models/excel",
+              "target": "RowSheet@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "BooleanCell@ecore://nasdanika.org/models/excel",
+              "target": "Cell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "ErrorCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "StringCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "ReferenceCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "BlankCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "DateCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "BooleanCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "NumericCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "EObjectCell@ecore://nasdanika.org/models/excel"
+            },
+            {
+              "source": "Cell@ecore://nasdanika.org/models/excel",
+              "target": "CellRow@ecore://nasdanika.org/models/excel"
+            }
+          ]
+        })
+                .nodeAutoColorBy('group')
+                .nodeVal('size')
+                .linkDirectionalArrowLength(2.5)
+                .linkDirectionalArrowRelPos(1)
+                .onNodeClick((node, event) => {
+       if (node.lastClick) {
+        if (event.timeStamp - node.lastClick < 500) {
+			if (Array.isArray(node.value) && node.value.length > 0) {
+				if (node.value[0].link) {
+					window.open(node.value[0].link, "_self");
+				} else if (node.value[0].externalLink) {
+					window.open(node.value[0].externalLink);
 				}
 			}
-		});
-		window.addEventListener("resize", myChart.resize);
-	});
+			delete node.lastClick;
+		} else {
+			node.lastClick = event.timeStamp;
+		}
+	} else {
+		node.lastClick = event.timeStamp;
+	}
+   })
+                .nodeThreeObject(node => {
+        const nodeEl = document.createElement('div');
+        nodeEl.textContent = node.name;
+        nodeEl.style.color = node.color;
+        nodeEl.className = 'node-label';
+        return new CSS2DObject(nodeEl);
+      })
+                .nodeThreeObjectExtend(true)
+                .onNodeDragEnd(node => {
+          node.fx = node.x;
+          node.fy = node.y;
+          node.fz = node.z;
+        })
 </script>
 </div>
                   </div>

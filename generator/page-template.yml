@@ -21,9 +21,20 @@ bootstrap.Page:
     - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
     - https://cdn.jsdelivr.net/gh/Nasdanika-Models/ecore@master/graph/web-resources/components/table.js 
     - https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js
+    - https://cdn.jsdelivr.net/npm/3d-force-graph
   head:
-    # Google analytics
     content.Text: |+2    
+      <!-- Node text styling -->      
+      <style>
+        .node-label {
+              font-size: 12px;
+              padding: 1px 4px;
+              border-radius: 4px;
+              background-color: rgba(0,0,0,0.5);
+              user-select: none;
+            }               
+      </style>
+    
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BRJVLK8CC"></script>
       <script>

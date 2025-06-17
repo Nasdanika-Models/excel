@@ -86,7 +86,13 @@ public class TestExcelModelDocGen {
 			
 		};		
 		
-		Map<String, Collection<String>> errors = actionSiteGenerator.generate(rootActionURI, pageTemplateURI, siteMapDomain, new File("../docs"), new File("target/doc-site-work-dir"), true);
+		Map<String, Collection<String>> errors = actionSiteGenerator.generate(
+				rootActionURI, 
+				pageTemplateURI, 
+				siteMapDomain, 
+				new File("../docs"), 
+				new File("target/doc-site-work-dir"), 
+				true);
 				
 		int errorCount = 0;
 		for (Entry<String, Collection<String>> ee: errors.entrySet()) {
