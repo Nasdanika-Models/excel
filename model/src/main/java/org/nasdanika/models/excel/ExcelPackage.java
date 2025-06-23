@@ -4,6 +4,7 @@ package org.nasdanika.models.excel;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -388,13 +389,22 @@ public interface ExcelPackage extends EPackage {
 	int CELL_ROW___ADD_STRING_CELL__STRING = ROW_OPERATION_COUNT + 7;
 
 	/**
+	 * The operation id for the '<em>Add Hyperlink Cell</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CELL_ROW___ADD_HYPERLINK_CELL__STRING_STRING = ROW_OPERATION_COUNT + 8;
+
+	/**
 	 * The number of operations of the '<em>Cell Row</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CELL_ROW_OPERATION_COUNT = ROW_OPERATION_COUNT + 8;
+	int CELL_ROW_OPERATION_COUNT = ROW_OPERATION_COUNT + 9;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.excel.impl.EObjectRowImpl <em>EObject Row</em>}' class.
@@ -887,6 +897,81 @@ public interface ExcelPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.nasdanika.models.excel.impl.HyperlinkCellImpl <em>Hyperlink Cell</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.excel.impl.HyperlinkCellImpl
+	 * @see org.nasdanika.models.excel.impl.ExcelPackageImpl#getHyperlinkCell()
+	 * @generated
+	 */
+	int HYPERLINK_CELL = 17;
+
+	/**
+	 * The feature id for the '<em><b>Column Index</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPERLINK_CELL__COLUMN_INDEX = STRING_CELL__COLUMN_INDEX;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPERLINK_CELL__VALUE = STRING_CELL__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPERLINK_CELL__ADDRESS = STRING_CELL_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Hyperlink Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPERLINK_CELL__HYPERLINK_TYPE = STRING_CELL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Hyperlink Cell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPERLINK_CELL_FEATURE_COUNT = STRING_CELL_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Hyperlink Cell</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HYPERLINK_CELL_OPERATION_COUNT = STRING_CELL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.models.excel.HyperlinkType <em>Hyperlink Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.models.excel.HyperlinkType
+	 * @see org.nasdanika.models.excel.impl.ExcelPackageImpl#getHyperlinkType()
+	 * @generated
+	 */
+	int HYPERLINK_TYPE = 18;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.excel.Workbook <em>Workbook</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1113,6 +1198,16 @@ public interface ExcelPackage extends EPackage {
 	EOperation getCellRow__AddStringCell__String();
 
 	/**
+	 * Returns the meta object for the '{@link org.nasdanika.models.excel.CellRow#addHyperlinkCell(java.lang.String, java.lang.String) <em>Add Hyperlink Cell</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Hyperlink Cell</em>' operation.
+	 * @see org.nasdanika.models.excel.CellRow#addHyperlinkCell(java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getCellRow__AddHyperlinkCell__String_String();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.excel.EObjectRow <em>EObject Row</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1333,6 +1428,48 @@ public interface ExcelPackage extends EPackage {
 	EReference getReferenceCell_Target();
 
 	/**
+	 * Returns the meta object for class '{@link org.nasdanika.models.excel.HyperlinkCell <em>Hyperlink Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Hyperlink Cell</em>'.
+	 * @see org.nasdanika.models.excel.HyperlinkCell
+	 * @generated
+	 */
+	EClass getHyperlinkCell();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.excel.HyperlinkCell#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see org.nasdanika.models.excel.HyperlinkCell#getAddress()
+	 * @see #getHyperlinkCell()
+	 * @generated
+	 */
+	EAttribute getHyperlinkCell_Address();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.models.excel.HyperlinkCell#getHyperlinkType <em>Hyperlink Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hyperlink Type</em>'.
+	 * @see org.nasdanika.models.excel.HyperlinkCell#getHyperlinkType()
+	 * @see #getHyperlinkCell()
+	 * @generated
+	 */
+	EAttribute getHyperlinkCell_HyperlinkType();
+
+	/**
+	 * Returns the meta object for enum '{@link org.nasdanika.models.excel.HyperlinkType <em>Hyperlink Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Hyperlink Type</em>'.
+	 * @see org.nasdanika.models.excel.HyperlinkType
+	 * @generated
+	 */
+	EEnum getHyperlinkType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1544,6 +1681,14 @@ public interface ExcelPackage extends EPackage {
 		EOperation CELL_ROW___ADD_STRING_CELL__STRING = eINSTANCE.getCellRow__AddStringCell__String();
 
 		/**
+		 * The meta object literal for the '<em><b>Add Hyperlink Cell</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CELL_ROW___ADD_HYPERLINK_CELL__STRING_STRING = eINSTANCE.getCellRow__AddHyperlinkCell__String_String();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.excel.impl.EObjectRowImpl <em>EObject Row</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1732,6 +1877,42 @@ public interface ExcelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference REFERENCE_CELL__TARGET = eINSTANCE.getReferenceCell_Target();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.excel.impl.HyperlinkCellImpl <em>Hyperlink Cell</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.excel.impl.HyperlinkCellImpl
+		 * @see org.nasdanika.models.excel.impl.ExcelPackageImpl#getHyperlinkCell()
+		 * @generated
+		 */
+		EClass HYPERLINK_CELL = eINSTANCE.getHyperlinkCell();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPERLINK_CELL__ADDRESS = eINSTANCE.getHyperlinkCell_Address();
+
+		/**
+		 * The meta object literal for the '<em><b>Hyperlink Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute HYPERLINK_CELL__HYPERLINK_TYPE = eINSTANCE.getHyperlinkCell_HyperlinkType();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.models.excel.HyperlinkType <em>Hyperlink Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.models.excel.HyperlinkType
+		 * @see org.nasdanika.models.excel.impl.ExcelPackageImpl#getHyperlinkType()
+		 * @generated
+		 */
+		EEnum HYPERLINK_TYPE = eINSTANCE.getHyperlinkType();
 
 	}
 

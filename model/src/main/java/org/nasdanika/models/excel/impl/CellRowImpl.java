@@ -21,6 +21,8 @@ import org.nasdanika.models.excel.EObjectCell;
 import org.nasdanika.models.excel.ErrorCell;
 import org.nasdanika.models.excel.ExcelFactory;
 import org.nasdanika.models.excel.ExcelPackage;
+import org.nasdanika.models.excel.HyperlinkCell;
+import org.nasdanika.models.excel.HyperlinkType;
 import org.nasdanika.models.excel.NumericCell;
 import org.nasdanika.models.excel.ReferenceCell;
 import org.nasdanika.models.excel.StringCell;
@@ -187,6 +189,22 @@ public class CellRowImpl extends RowImpl implements CellRow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public HyperlinkCell addHyperlinkCell(String value, String address) {
+		HyperlinkCell cell = ((ExcelFactory) eClass().getEPackage().getEFactoryInstance()).createHyperlinkCell();
+		cell.setValue(value);
+		cell.setAddress(address);
+		cell.setHyperlinkType(HyperlinkType.URL);
+		cell.setColumnIndex(nextColumnIndex());
+		getCells().add(cell);		
+		return cell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -282,6 +300,8 @@ public class CellRowImpl extends RowImpl implements CellRow {
 				return addReferenceCell((EObject)arguments.get(0));
 			case ExcelPackage.CELL_ROW___ADD_STRING_CELL__STRING:
 				return addStringCell((String)arguments.get(0));
+			case ExcelPackage.CELL_ROW___ADD_HYPERLINK_CELL__STRING_STRING:
+				return addHyperlinkCell((String)arguments.get(0), (String)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

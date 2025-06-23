@@ -127,6 +127,7 @@ public class ExcelTests {
 		headerRow.addStringCell("Error");
 		headerRow.addStringCell("Numeric");
 		headerRow.addStringCell("String");
+		headerRow.addStringCell("Hyperlink");
 		
 		CellRow dataRow = rowSheet.addCellRow();
 		dataRow.addBlankCell();
@@ -138,6 +139,7 @@ public class ExcelTests {
 		dataRow.addErrorCell((byte) 33);
 		dataRow.addNumericCell(33);
 		dataRow.addStringCell("Hello world!");
+		dataRow.addHyperlinkCell("Nasdanika", "https://docs.nasdanika.org");
 		
 		excelResource.save(null);
 

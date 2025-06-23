@@ -3,6 +3,7 @@
 package org.nasdanika.models.excel.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -71,8 +72,39 @@ public class ExcelFactoryImpl extends EFactoryImpl implements ExcelFactory {
 			case ExcelPackage.STRING_CELL: return createStringCell();
 			case ExcelPackage.EOBJECT_CELL: return createEObjectCell();
 			case ExcelPackage.REFERENCE_CELL: return createReferenceCell();
+			case ExcelPackage.HYPERLINK_CELL: return createHyperlinkCell();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ExcelPackage.HYPERLINK_TYPE:
+				return createHyperlinkTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ExcelPackage.HYPERLINK_TYPE:
+				return convertHyperlinkTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -239,6 +271,37 @@ public class ExcelFactoryImpl extends EFactoryImpl implements ExcelFactory {
 	public ReferenceCell createReferenceCell() {
 		ReferenceCellImpl referenceCell = new ReferenceCellImpl();
 		return referenceCell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public HyperlinkCell createHyperlinkCell() {
+		HyperlinkCellImpl hyperlinkCell = new HyperlinkCellImpl();
+		return hyperlinkCell;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HyperlinkType createHyperlinkTypeFromString(EDataType eDataType, String initialValue) {
+		HyperlinkType result = HyperlinkType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertHyperlinkTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

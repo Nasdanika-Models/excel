@@ -136,6 +136,10 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 				return createReferenceCellAdapter();
 			}
 			@Override
+			public Adapter caseHyperlinkCell(HyperlinkCell object) {
+				return createHyperlinkCellAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -390,6 +394,20 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createReferenceCellAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.models.excel.HyperlinkCell <em>Hyperlink Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.models.excel.HyperlinkCell
+	 * @generated
+	 */
+	public Adapter createHyperlinkCellAdapter() {
 		return null;
 	}
 

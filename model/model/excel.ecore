@@ -49,6 +49,10 @@
     <eOperations name="addStringCell" eType="#//StringCell">
       <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="addHyperlinkCell" eType="#//HyperlinkCell">
+      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cells" upperBound="-1"
         eType="#//Cell" containment="true"/>
   </eClassifiers>
@@ -85,5 +89,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReferenceCell" eSuperTypes="#//Cell">
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HyperlinkCell" eSuperTypes="#//StringCell">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hyperlinkType" eType="#//HyperlinkType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HyperlinkType">
+    <eLiterals name="NONE" value="-1"/>
+    <eLiterals name="URL" value="1"/>
+    <eLiterals name="DOCUMENT" value="2"/>
+    <eLiterals name="EMAIL" value="3"/>
+    <eLiterals name="FILE" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -5,6 +5,7 @@ import java.io.OutputStream;
 
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -15,6 +16,7 @@ import org.nasdanika.models.excel.CellRow;
 import org.nasdanika.models.excel.DateCell;
 import org.nasdanika.models.excel.EObjectCell;
 import org.nasdanika.models.excel.ErrorCell;
+import org.nasdanika.models.excel.HyperlinkCell;
 import org.nasdanika.models.excel.NumericCell;
 import org.nasdanika.models.excel.ReferenceCell;
 import org.nasdanika.models.excel.Row;
@@ -22,6 +24,10 @@ import org.nasdanika.models.excel.RowSheet;
 import org.nasdanika.models.excel.Sheet;
 import org.nasdanika.models.excel.StringCell;
 import org.nasdanika.models.excel.Workbook;
+import org.apache.poi.xssf.usermodel.*;
+import org.apache.poi.common.usermodel.HyperlinkType;
+import org.apache.poi.ss.usermodel.*;
+
 
 public class XSSWorkbookSaver implements WorkbookSaver {
 
@@ -36,7 +42,7 @@ public class XSSWorkbookSaver implements WorkbookSaver {
 							CellRow cellRow = (CellRow) row;
 							XSSFRow xssRow = xssSheet.createRow(row.getNumber());
 							for (Cell cell: cellRow.getCells()) {
-								addCell(xssRow, cell);
+								addCell(xssWorkbook, xssRow, cell);
 							}
 						} else {
 							throw new IllegalArgumentException("Can save only cell rows");										
@@ -53,7 +59,7 @@ public class XSSWorkbookSaver implements WorkbookSaver {
 		}
 	}
 
-	protected void addCell(XSSFRow xssRow, Cell cell) {
+	protected void addCell(XSSFWorkbook xssWorkbook, XSSFRow xssRow, Cell cell) {
 		if (cell instanceof BlankCell) {
 			xssRow.createCell(cell.getColumnIndex(), CellType.BLANK);
 		} else 	if (cell instanceof BooleanCell) {
@@ -69,7 +75,31 @@ public class XSSWorkbookSaver implements WorkbookSaver {
 		} else if (cell instanceof ReferenceCell) {
 			xssRow.createCell(cell.getColumnIndex(), CellType.STRING).setCellValue(((ReferenceCell) cell).getTarget().toString());
 		} else if (cell instanceof StringCell) {
-			xssRow.createCell(cell.getColumnIndex(), CellType.STRING).setCellValue(((StringCell) cell).getValue());
+			XSSFCell xssCell = xssRow.createCell(cell.getColumnIndex(), CellType.STRING);
+			xssCell.setCellValue(((StringCell) cell).getValue());
+			if (cell instanceof HyperlinkCell) {
+		        CreationHelper createHelper = xssWorkbook.getCreationHelper();
+		        HyperlinkCell hlCell = (HyperlinkCell) cell;
+		        HyperlinkType hyperlinkType = switch (hlCell.getHyperlinkType()) {
+				case DOCUMENT -> HyperlinkType.DOCUMENT;
+				case EMAIL -> HyperlinkType.EMAIL;
+				case FILE -> HyperlinkType.FILE;
+				case NONE -> HyperlinkType.NONE;
+				case URL -> HyperlinkType.URL;
+				default -> throw new IllegalArgumentException("Unsupported hyperlink type: " + hlCell.getHyperlinkType());
+		        };
+		        Hyperlink link = createHelper.createHyperlink(hyperlinkType);
+		        link.setAddress(hlCell.getAddress());
+		        xssCell.setHyperlink(link);
+
+		        // Styling
+		        CellStyle hyperlinkStyle = xssWorkbook.createCellStyle();
+		        XSSFFont hyperlinkFont = xssWorkbook.createFont();
+		        hyperlinkFont.setUnderline(Font.U_SINGLE);
+		        hyperlinkFont.setColor(IndexedColors.BLUE.getIndex());
+		        hyperlinkStyle.setFont(hyperlinkFont);
+		        xssCell.setCellStyle(hyperlinkStyle);			
+			}			
 		} else {
 			throw new UnsupportedOperationException("Unsupported cell type: " + cell);
 		}

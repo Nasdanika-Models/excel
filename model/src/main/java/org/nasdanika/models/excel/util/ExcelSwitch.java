@@ -181,6 +181,14 @@ public class ExcelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ExcelPackage.HYPERLINK_CELL: {
+				HyperlinkCell hyperlinkCell = (HyperlinkCell)theEObject;
+				T result = caseHyperlinkCell(hyperlinkCell);
+				if (result == null) result = caseStringCell(hyperlinkCell);
+				if (result == null) result = caseCell(hyperlinkCell);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -437,6 +445,21 @@ public class ExcelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseReferenceCell(ReferenceCell object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Hyperlink Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Hyperlink Cell</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseHyperlinkCell(HyperlinkCell object) {
 		return null;
 	}
 

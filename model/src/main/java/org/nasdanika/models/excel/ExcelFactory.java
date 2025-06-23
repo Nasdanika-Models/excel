@@ -157,6 +157,15 @@ public interface ExcelFactory extends EFactory {
 	ReferenceCell createReferenceCell();
 
 	/**
+	 * Returns a new object of class '<em>Hyperlink Cell</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Hyperlink Cell</em>'.
+	 * @generated
+	 */
+	HyperlinkCell createHyperlinkCell();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

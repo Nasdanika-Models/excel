@@ -99,4 +99,12 @@ public interface CellRow extends Row {
 	 */
 	StringCell addStringCell(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	HyperlinkCell addHyperlinkCell(String value, String address);
+
 } // CellRow

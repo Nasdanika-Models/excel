@@ -8,6 +8,13 @@
   <foreignModel>excel.ecore</foreignModel>
   <genPackages prefix="Excel" basePackage="org.nasdanika.models" disposableProviderFactory="true"
       ecorePackage="excel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="excel.ecore#//HyperlinkType">
+      <genEnumLiterals ecoreEnumLiteral="excel.ecore#//HyperlinkType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="excel.ecore#//HyperlinkType/URL"/>
+      <genEnumLiterals ecoreEnumLiteral="excel.ecore#//HyperlinkType/DOCUMENT"/>
+      <genEnumLiterals ecoreEnumLiteral="excel.ecore#//HyperlinkType/EMAIL"/>
+      <genEnumLiterals ecoreEnumLiteral="excel.ecore#//HyperlinkType/FILE"/>
+    </genEnums>
     <genClasses ecoreClass="excel.ecore#//Workbook">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//Workbook/sheets"/>
       <genOperations ecoreOperation="excel.ecore#//Workbook/addRowSheet">
@@ -51,6 +58,10 @@
       <genOperations ecoreOperation="excel.ecore#//CellRow/addStringCell">
         <genParameters ecoreParameter="excel.ecore#//CellRow/addStringCell/value"/>
       </genOperations>
+      <genOperations ecoreOperation="excel.ecore#//CellRow/addHyperlinkCell">
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addHyperlinkCell/value"/>
+        <genParameters ecoreParameter="excel.ecore#//CellRow/addHyperlinkCell/address"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="excel.ecore#//EObjectRow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//EObjectRow/contents"/>
@@ -82,6 +93,10 @@
     </genClasses>
     <genClasses ecoreClass="excel.ecore#//ReferenceCell">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference excel.ecore#//ReferenceCell/target"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//HyperlinkCell">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//HyperlinkCell/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//HyperlinkCell/hyperlinkType"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

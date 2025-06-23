@@ -4,6 +4,7 @@ package org.nasdanika.models.excel.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -19,6 +20,8 @@ import org.nasdanika.models.excel.EObjectRow;
 import org.nasdanika.models.excel.ErrorCell;
 import org.nasdanika.models.excel.ExcelFactory;
 import org.nasdanika.models.excel.ExcelPackage;
+import org.nasdanika.models.excel.HyperlinkCell;
+import org.nasdanika.models.excel.HyperlinkType;
 import org.nasdanika.models.excel.ListRow;
 import org.nasdanika.models.excel.ListSheet;
 import org.nasdanika.models.excel.NumericCell;
@@ -154,6 +157,20 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * @generated
 	 */
 	private EClass referenceCellEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass hyperlinkCellEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum hyperlinkTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -441,6 +458,16 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getCellRow__AddHyperlinkCell__String_String() {
+		return cellRowEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEObjectRow() {
 		return eObjectRowEClass;
 	}
@@ -651,6 +678,46 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getHyperlinkCell() {
+		return hyperlinkCellEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getHyperlinkCell_Address() {
+		return (EAttribute)hyperlinkCellEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getHyperlinkCell_HyperlinkType() {
+		return (EAttribute)hyperlinkCellEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getHyperlinkType() {
+		return hyperlinkTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ExcelFactory getExcelFactory() {
 		return (ExcelFactory)getEFactoryInstance();
 	}
@@ -701,6 +768,7 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 		createEOperation(cellRowEClass, CELL_ROW___ADD_NUMERIC_CELL__DOUBLE);
 		createEOperation(cellRowEClass, CELL_ROW___ADD_REFERENCE_CELL__EOBJECT);
 		createEOperation(cellRowEClass, CELL_ROW___ADD_STRING_CELL__STRING);
+		createEOperation(cellRowEClass, CELL_ROW___ADD_HYPERLINK_CELL__STRING_STRING);
 
 		eObjectRowEClass = createEClass(EOBJECT_ROW);
 		createEReference(eObjectRowEClass, EOBJECT_ROW__CONTENTS);
@@ -733,6 +801,13 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 
 		referenceCellEClass = createEClass(REFERENCE_CELL);
 		createEReference(referenceCellEClass, REFERENCE_CELL__TARGET);
+
+		hyperlinkCellEClass = createEClass(HYPERLINK_CELL);
+		createEAttribute(hyperlinkCellEClass, HYPERLINK_CELL__ADDRESS);
+		createEAttribute(hyperlinkCellEClass, HYPERLINK_CELL__HYPERLINK_TYPE);
+
+		// Create enums
+		hyperlinkTypeEEnum = createEEnum(HYPERLINK_TYPE);
 	}
 
 	/**
@@ -776,6 +851,7 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 		stringCellEClass.getESuperTypes().add(this.getCell());
 		eObjectCellEClass.getESuperTypes().add(this.getCell());
 		referenceCellEClass.getESuperTypes().add(this.getCell());
+		hyperlinkCellEClass.getESuperTypes().add(this.getStringCell());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(workbookEClass, Workbook.class, "Workbook", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -825,6 +901,10 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 		op = initEOperation(getCellRow__AddStringCell__String(), this.getStringCell(), "addStringCell", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getCellRow__AddHyperlinkCell__String_String(), this.getHyperlinkCell(), "addHyperlinkCell", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "address", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(eObjectRowEClass, EObjectRow.class, "EObjectRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEObjectRow_Contents(), ecorePackage.getEObject(), null, "contents", null, 0, 1, EObjectRow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -856,6 +936,18 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 
 		initEClass(referenceCellEClass, ReferenceCell.class, "ReferenceCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReferenceCell_Target(), ecorePackage.getEObject(), null, "target", null, 0, 1, ReferenceCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(hyperlinkCellEClass, HyperlinkCell.class, "HyperlinkCell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getHyperlinkCell_Address(), ecorePackage.getEString(), "address", null, 0, 1, HyperlinkCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHyperlinkCell_HyperlinkType(), this.getHyperlinkType(), "hyperlinkType", null, 0, 1, HyperlinkCell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(hyperlinkTypeEEnum, HyperlinkType.class, "HyperlinkType");
+		addEEnumLiteral(hyperlinkTypeEEnum, HyperlinkType.NONE);
+		addEEnumLiteral(hyperlinkTypeEEnum, HyperlinkType.URL);
+		addEEnumLiteral(hyperlinkTypeEEnum, HyperlinkType.DOCUMENT);
+		addEEnumLiteral(hyperlinkTypeEEnum, HyperlinkType.EMAIL);
+		addEEnumLiteral(hyperlinkTypeEEnum, HyperlinkType.FILE);
 
 		// Create resource
 		createResource(eNS_URI);
