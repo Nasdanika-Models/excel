@@ -262,5 +262,46 @@ public abstract class TitleAndDescriptionColumnBuilder<T> implements ColumnBuild
 			
 		};
 	}
+	
+	public static <T> ColumnBuilder<T> hyperlinkColumnBuilder(
+			String title, 
+			String description, 
+			Function<T,String> valueProvider,
+			Function<T,String> addressProvider,
+			Aggregator<String> aggregator) {
+		return new TitleAndDescriptionColumnBuilder<T>(title, description) {
+
+			@Override
+			public List<RowBuilder> getElementBuilders(T element) {
+				return Collections.singletonList(row -> {
+					String value = valueProvider.apply(element);
+					if (aggregator != null) {
+						aggregator.add(value);
+					}
+					if (value == null) {
+						row.addBlankCell();
+					} else {
+						String address = addressProvider.apply(element);
+						if (Util.isBlank(address)) {
+							row.addStringCell(value);
+						} else {
+							row.addHyperlinkCell(value, address);
+						}
+					}
+				});
+			}
+
+			@Override
+			public List<RowBuilder> getFooterBuilders() {
+				return aggregator == null ? Collections.emptyList() : aggregator.getFooterBuilders();
+			}
+
+			@Override
+			public int width() {
+				return 1;
+			}
+			
+		};
+	}
 
 }
