@@ -30,6 +30,7 @@ import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.models.excel.Cell;
 import org.nasdanika.models.excel.CellRow;
 import org.nasdanika.models.excel.ExcelFactory;
+import org.nasdanika.models.excel.NumericCell;
 import org.nasdanika.models.excel.Row;
 import org.nasdanika.models.excel.RowSheet;
 import org.nasdanika.models.excel.Sheet;

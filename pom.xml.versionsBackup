@@ -25,7 +25,7 @@
 		<core.version>2024.6.0</core.version>
 		<html.version>2024.6.0</html.version>
 		<models.ecore.version>2024.6.0</models.ecore.version>
-		<jacoco.version>0.8.12</jacoco.version>
+		<jacoco.version>0.8.14</jacoco.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
 	</properties>	

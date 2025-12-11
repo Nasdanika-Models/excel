@@ -2,992 +2,1167 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" >
   <url>
     <loc>https://excel.models.nasdanika.org/circular-layout-graph-with-dependencies-and-subpackages.html</loc>
-    <lastmod>2025-06-15T23:54:33.955-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.214-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.951-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.207-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/classifiers.html</loc>
-    <lastmod>2025-06-15T23:54:33.945-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.201-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/default-graph-with-dependencies-and-subpackages.html</loc>
-    <lastmod>2025-06-15T23:54:33.953-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.212-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.949-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.206-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.948-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.205-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/force-layout-graph-3d-detailed.html</loc>
+    <lastmod>2025-12-10T17:27:53.211-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/force-layout-graph-3d-with-dependencies-and-subpackages-detailed.html</loc>
+    <lastmod>2025-12-10T17:27:53.218-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/force-layout-graph-3d-with-dependencies-and-subpackages.html</loc>
-    <lastmod>2025-06-15T23:54:33.958-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.216-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/force-layout-graph-3d.html</loc>
-    <lastmod>2025-06-15T23:54:33.952-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.210-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/force-layout-graph-with-dependencies-and-subpackages.html</loc>
-    <lastmod>2025-06-15T23:54:33.956-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.215-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.951-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.208-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/glossary.html</loc>
-    <lastmod>2025-06-15T23:54:33.962-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.223-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.697-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.915-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.699-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.920-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.705-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.925-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.704-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.925-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.704-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.924-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:52.929-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.706-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.928-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.699-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.918-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.703-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.923-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BlankCell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.707-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.930-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.708-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.932-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.714-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.939-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.713-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.938-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.712-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.937-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:52.942-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.715-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.940-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.707-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.931-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.711-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.936-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.716-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.943-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/BooleanCell/references/eStructuralFeatures/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.711-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.935-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.718-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.945-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.725-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.955-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.724-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.954-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.723-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.953-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:52.957-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.726-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.956-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.716-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.944-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.721-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.949-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.726-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.959-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Cell/references/eStructuralFeatures/columnIndex/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.719-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.947-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.729-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.962-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.771-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.012-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.770-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.010-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.770-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.009-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.014-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.772-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.013-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.727-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.961-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.730-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.963-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.773-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.015-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/operations.html</loc>
-    <lastmod>2025-06-15T23:54:33.731-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.965-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addBlankCell-0/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.734-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.967-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addBooleanCell-1/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.734-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.967-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addBooleanCell-1/parameters.html</loc>
-    <lastmod>2025-06-15T23:54:33.735-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.968-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addBooleanCell-1/references/eParameters/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.737-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.971-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addDateCell-2/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.738-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.972-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addDateCell-2/parameters.html</loc>
-    <lastmod>2025-06-15T23:54:33.739-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.973-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addDateCell-2/references/eParameters/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.741-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.976-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addEObjectCell-3/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.741-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.978-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addEObjectCell-3/parameters.html</loc>
-    <lastmod>2025-06-15T23:54:33.742-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.979-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addEObjectCell-3/references/eParameters/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.744-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.981-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addErrorCell-4/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.746-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.982-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addErrorCell-4/parameters.html</loc>
-    <lastmod>2025-06-15T23:54:33.746-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.983-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addErrorCell-4/references/eParameters/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.748-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.985-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addHyperlinkCell-8/index.html</loc>
+    <lastmod>2025-12-10T17:27:53-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addHyperlinkCell-8/parameters.html</loc>
+    <lastmod>2025-12-10T17:27:53.001-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addHyperlinkCell-8/references/eParameters/address/index.html</loc>
+    <lastmod>2025-12-10T17:27:53.005-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addHyperlinkCell-8/references/eParameters/value/index.html</loc>
+    <lastmod>2025-12-10T17:27:53.004-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addNumericCell-5/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.749-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.986-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addNumericCell-5/parameters.html</loc>
-    <lastmod>2025-06-15T23:54:33.750-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.987-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addNumericCell-5/references/eParameters/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.753-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.990-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addReferenceCell-6/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.753-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.991-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addReferenceCell-6/parameters.html</loc>
-    <lastmod>2025-06-15T23:54:33.755-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.992-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addReferenceCell-6/references/eParameters/target/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.760-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.994-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addStringCell-7/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.762-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.996-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addStringCell-7/parameters.html</loc>
-    <lastmod>2025-06-15T23:54:33.763-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.997-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eOperations/addStringCell-7/references/eParameters/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.766-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:52.999-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references/eStructuralFeatures/cells/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.767-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.007-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/CellRow/references.html</loc>
-    <lastmod>2025-06-15T23:54:33.768-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.007-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.775-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.017-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.784-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.023-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.782-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.023-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.780-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.022-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.026-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.785-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.024-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.774-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.017-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.778-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.021-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.786-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.027-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/DateCell/references/eStructuralFeatures/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.777-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.019-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.788-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.029-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.797-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.037-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.796-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.036-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.795-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.034-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.039-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.798-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.038-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.787-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.028-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.790-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.030-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.799-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.041-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/references/eStructuralFeatures/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.793-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.032-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectCell/references.html</loc>
-    <lastmod>2025-06-15T23:54:33.791-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.031-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.801-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.043-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.809-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.053-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.808-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.052-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.807-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.050-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.055-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.810-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.054-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.800-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.042-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.803-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.044-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.811-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.055-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/references/eStructuralFeatures/contents/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.805-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.048-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/EObjectRow/references.html</loc>
-    <lastmod>2025-06-15T23:54:33.803-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.046-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.813-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.058-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.820-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.065-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.819-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.064-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.818-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.063-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.067-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.821-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.066-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.812-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.057-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.817-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.062-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.822-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.068-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ErrorCell/references/eStructuralFeatures/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.816-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.061-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/attributes.html</loc>
+    <lastmod>2025-12-10T17:27:53.070-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/circular-layout-graph.html</loc>
+    <lastmod>2025-12-10T17:27:53.078-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/default-graph.html</loc>
+    <lastmod>2025-12-10T17:27:53.077-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/diagram.html</loc>
+    <lastmod>2025-12-10T17:27:53.076-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.080-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/force-layout-graph.html</loc>
+    <lastmod>2025-12-10T17:27:53.079-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/index.html</loc>
+    <lastmod>2025-12-10T17:27:53.069-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/inheritance.html</loc>
+    <lastmod>2025-12-10T17:27:53.074-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/load-specification.html</loc>
+    <lastmod>2025-12-10T17:27:53.081-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/references/eStructuralFeatures/address/index.html</loc>
+    <lastmod>2025-12-10T17:27:53.073-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkCell/references/eStructuralFeatures/hyperlinkType/index.html</loc>
+    <lastmod>2025-12-10T17:27:53.074-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/HyperlinkType/index.html</loc>
+    <lastmod>2025-12-10T17:27:53.082-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.824-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.084-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.832-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.092-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.831-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.091-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.830-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.090-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.095-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.833-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.093-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.823-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.083-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.825-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.085-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.834-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.096-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/references/eStructuralFeatures/contents/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.828-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.088-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListRow/references.html</loc>
-    <lastmod>2025-06-15T23:54:33.826-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.086-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.836-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.098-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.845-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.106-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.844-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.105-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.843-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.104-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.108-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.845-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.107-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.835-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.097-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.838-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.099-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.846-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.109-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/references/eStructuralFeatures/contents/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.841-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.102-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ListSheet/references.html</loc>
-    <lastmod>2025-06-15T23:54:33.838-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.100-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.848-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.112-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.855-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.118-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.854-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.117-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.853-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.116-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.121-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.856-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.119-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.848-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.111-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.852-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.115-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.857-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.122-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/NumericCell/references/eStructuralFeatures/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.851-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.115-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.859-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.124-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.868-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.132-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.867-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.131-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.866-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.130-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.134-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.869-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.133-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.859-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.123-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.860-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.125-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.870-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.135-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/references/eStructuralFeatures/target/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.864-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.128-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/ReferenceCell/references.html</loc>
-    <lastmod>2025-06-15T23:54:33.861-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.126-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.871-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.137-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.879-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.145-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.878-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.144-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.877-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.143-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.147-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.880-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.146-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.870-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.136-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.874-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.141-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Row/references/eStructuralFeatures/number/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.873-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.139-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.882-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.149-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.891-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.159-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.890-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.158-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.889-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.157-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.161-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.904-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.160-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.882-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.148-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.883-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.150-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.906-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.162-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/operations.html</loc>
-    <lastmod>2025-06-15T23:54:33.884-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.151-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/references/eOperations/addCellRow-0/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.886-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.154-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/references/eStructuralFeatures/rows/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.887-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.154-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/RowSheet/references.html</loc>
-    <lastmod>2025-06-15T23:54:33.888-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.155-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.909-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.164-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.916-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.171-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.914-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.170-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.913-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.169-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.172-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.917-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.172-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.907-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.164-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.912-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.168-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Sheet/references/eStructuralFeatures/name/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.910-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.166-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/attributes.html</loc>
-    <lastmod>2025-06-15T23:54:33.919-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.175-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.925-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.181-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.924-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.180-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.923-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.179-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.183-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.926-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.182-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.918-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.174-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/inheritance.html</loc>
-    <lastmod>2025-06-15T23:54:33.922-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.178-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.927-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.184-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/StringCell/references/eStructuralFeatures/value/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.921-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.177-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/circular-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.939-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.197-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/default-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.938-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.196-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/diagram.html</loc>
-    <lastmod>2025-06-15T23:54:33.937-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.195-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/force-layout-graph-3d.html</loc>
+    <lastmod>2025-12-10T17:27:53.199-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/force-layout-graph.html</loc>
-    <lastmod>2025-06-15T23:54:33.942-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.198-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.928-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.185-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/load-specification.html</loc>
-    <lastmod>2025-06-15T23:54:33.944-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.200-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/operations.html</loc>
-    <lastmod>2025-06-15T23:54:33.928-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.186-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/references/eOperations/addRowSheet-0/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.930-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.188-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/references/eOperations/addRowSheet-0/parameters.html</loc>
-    <lastmod>2025-06-15T23:54:33.931-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.189-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/references/eOperations/addRowSheet-0/references/eParameters/name/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.935-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.191-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/references/eStructuralFeatures/sheets/index.html</loc>
-    <lastmod>2025-06-15T23:54:33.935-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.192-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/references/eClassifiers/Workbook/references.html</loc>
-    <lastmod>2025-06-15T23:54:33.936-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.194-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://excel.models.nasdanika.org/search.html</loc>
-    <lastmod>2025-06-15T23:54:33.961-04:00</lastmod>
+    <lastmod>2025-12-10T17:27:53.222-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>
