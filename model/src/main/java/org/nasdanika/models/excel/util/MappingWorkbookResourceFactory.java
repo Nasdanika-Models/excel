@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.nasdanika.capability.emf.ResourceContentsFilter;
 import org.nasdanika.common.DefaultConverter;
 import org.nasdanika.common.Util;
 import org.nasdanika.exec.content.ContentFactory;
@@ -36,6 +37,10 @@ import org.nasdanika.models.excel.Workbook;
  * Populates the root object my mapping cells and sheets to features.
  */
 public abstract class MappingWorkbookResourceFactory extends WorkbookResourceFactory {
+
+	public MappingWorkbookResourceFactory(Collection<ResourceContentsFilter> filters) {
+		super(filters);
+	}
 
 	/**
 	 * Creates the root EObject

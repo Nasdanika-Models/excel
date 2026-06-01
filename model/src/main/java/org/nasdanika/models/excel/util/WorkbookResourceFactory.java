@@ -3,12 +3,16 @@ package org.nasdanika.models.excel.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
+import org.nasdanika.capability.emf.ContentsFilteringResource;
+import org.nasdanika.capability.emf.ResourceContentsFilter;
 import org.nasdanika.models.excel.Workbook;
 
 /**
@@ -18,31 +22,29 @@ import org.nasdanika.models.excel.Workbook;
  */
 public class WorkbookResourceFactory extends ResourceFactoryImpl {
 	
+	protected Collection<ResourceContentsFilter> filters;
+	
+	public WorkbookResourceFactory(Collection<ResourceContentsFilter> filters) {
+		this.filters = filters;
+	}
+	
+	
 	@Override
 	public Resource createResource(URI uri) {
-		return new ResourceImpl(uri) {
-
+		return new ContentsFilteringResource(uri, filters) {
+			
 			@Override
-			protected void doLoad(InputStream inputStream, Map<?, ?> options) throws IOException {
+			protected List<EObject> loadContents(InputStream inputStream, Map<?, ?> options) throws IOException {
 				Workbook workbook = getLoader(this).load(inputStream);
-				loadContents(workbook, this);
+				return List.of(workbook);
 			}
 			
 			@Override
-			protected void doSave(OutputStream outputStream, Map<?, ?> options) throws IOException {
-				getSaver(this).save((Workbook) getContents().get(0), outputStream);
+			protected void saveContents(List<EObject> contents, OutputStream outputStream, Map<?, ?> options) throws IOException {
+				getSaver(this).save((Workbook) contents.get(0), outputStream);
 			}
 			
 		};
-	}
-	
-	/**
-	 * Override to customize, e.g. transform the workbook to something else
-	 * @param workbook
-	 * @param resource
-	 */
-	protected void loadContents(Workbook workbook, Resource resource) {
-		resource.getContents().add(workbook);		
 	}
 
 	protected WorkbookLoader getLoader(Resource resource) {

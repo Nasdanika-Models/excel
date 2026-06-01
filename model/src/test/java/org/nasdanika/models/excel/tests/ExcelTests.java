@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.module.ModuleDescriptor;
 import java.lang.module.ModuleDescriptor.Requires;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.eclipse.emf.common.util.URI;
@@ -24,13 +26,13 @@ import org.junit.jupiter.api.Test;
 import org.nasdanika.capability.CapabilityLoader;
 import org.nasdanika.capability.ServiceCapabilityFactory;
 import org.nasdanika.capability.ServiceCapabilityFactory.Requirement;
+import org.nasdanika.capability.emf.ResourceContentsFilter;
 import org.nasdanika.capability.emf.ResourceSetRequirement;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.models.excel.Cell;
 import org.nasdanika.models.excel.CellRow;
 import org.nasdanika.models.excel.ExcelFactory;
-import org.nasdanika.models.excel.NumericCell;
 import org.nasdanika.models.excel.Row;
 import org.nasdanika.models.excel.RowSheet;
 import org.nasdanika.models.excel.Sheet;
@@ -93,7 +95,7 @@ public class ExcelTests {
 	@Test
 	public void testLoadXSSWorkbookResource() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory(null));
 		File test = new File("test.xlsx").getCanonicalFile();
 		Resource excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
 		for (EObject root: excelResource.getContents()) {
@@ -115,7 +117,7 @@ public class ExcelTests {
 	@Test
 	public void testSaveAndLoadXSSWorkbookResource() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory(null));
 		File test = new File("target/test.xlsx").getCanonicalFile();
 		Resource excelResource = resourceSet.createResource(URI.createFileURI(test.getAbsolutePath()));
 		Workbook workbook = ExcelFactory.eINSTANCE.createWorkbook();
@@ -146,7 +148,7 @@ public class ExcelTests {
 
 		// Reading to a new resource set
 		resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory(null));
 		excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
 		for (EObject root: excelResource.getContents()) {
 			for (Sheet sheet: ((Workbook) root).getSheets()) {
@@ -167,7 +169,7 @@ public class ExcelTests {
 	@Test
 	public void testLoadCSVResource() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("csv", new WorkbookResourceFactory());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("csv", new WorkbookResourceFactory(null));
 		File test = new File("test.csv").getCanonicalFile();
 		Resource excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
 		for (EObject root: excelResource.getContents()) {
@@ -189,7 +191,7 @@ public class ExcelTests {
 	@Test
 	public void testSaveCSVWorkbookResource() throws Exception {
 		ResourceSet resourceSet = new ResourceSetImpl();
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("csv", new WorkbookResourceFactory());
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("csv", new WorkbookResourceFactory(null));
 		File test = new File("target/test.csv").getCanonicalFile();
 		Resource excelResource = resourceSet.createResource(URI.createFileURI(test.getAbsolutePath()));
 		Workbook workbook = ExcelFactory.eINSTANCE.createWorkbook();
@@ -365,6 +367,115 @@ public class ExcelTests {
 		groupSeries.generate(workbook);
 		
 		excelResource.save(null);
+	}
+	
+	@Test
+	public void testSaveAndLoadXSSWorkbookResourceWithFiltering() throws Exception {
+		ResourceContentsFilter filter1 = new ResourceContentsFilter() {
+			
+			@Override
+			public List<EObject> load(
+					Resource resource, 
+					List<EObject> contents, 
+					String qualifier,
+					int qualifierPosition, Map<?, ?> options) throws IOException {
+				
+				System.out.println("Filter1 load: " + qualifier + " " + qualifierPosition);				
+				return ResourceContentsFilter.super.load(resource, contents, qualifier, qualifierPosition, options);
+			}
+			
+			@Override
+			public List<EObject> save(
+					Resource resource, 
+					List<EObject> contents, 
+					String qualifier,
+					int qualifierPosition, Map<?, ?> options) throws IOException {
+				System.out.println("Filter1 save: " + qualifier + " " + qualifierPosition);				
+				return ResourceContentsFilter.super.save(resource, contents, qualifier, qualifierPosition, options);
+			}
+						
+		};
+		
+		ResourceContentsFilter filter2 = new ResourceContentsFilter() {
+			
+			@Override
+			public int order() {
+				return 10;
+			}
+			
+			@Override
+			public List<EObject> load(
+					Resource resource, 
+					List<EObject> contents, 
+					String qualifier,
+					int qualifierPosition, Map<?, ?> options) throws IOException {
+				
+				System.out.println("Filter2 load: " + qualifier + " " + qualifierPosition);				
+				return ResourceContentsFilter.super.load(resource, contents, qualifier, qualifierPosition, options);
+			}
+			
+			@Override
+			public List<EObject> save(
+					Resource resource, 
+					List<EObject> contents, 
+					String qualifier,
+					int qualifierPosition, Map<?, ?> options) throws IOException {
+				System.out.println("Filter2 save: " + qualifier + " " + qualifierPosition);				
+				return ResourceContentsFilter.super.save(resource, contents, qualifier, qualifierPosition, options);
+			}
+			
+		};
+		
+		List<ResourceContentsFilter> filters = List.of(filter1, filter2);
+		
+		ResourceSet resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory(filters));
+		File test = new File("target/test-filters.qualifier.xlsx").getCanonicalFile();
+		Resource excelResource = resourceSet.createResource(URI.createFileURI(test.getAbsolutePath()));
+		Workbook workbook = ExcelFactory.eINSTANCE.createWorkbook();
+		excelResource.getContents().add(workbook);
+		RowSheet rowSheet = workbook.addRowSheet("My worksheet");
+		CellRow headerRow = rowSheet.addCellRow();
+		headerRow.addStringCell("Blank");
+		headerRow.addStringCell("Boolean");
+		headerRow.addStringCell("Date");
+		headerRow.addStringCell("Error");
+		headerRow.addStringCell("Numeric");
+		headerRow.addStringCell("String");
+		headerRow.addStringCell("Hyperlink");
+		
+		CellRow dataRow = rowSheet.addCellRow();
+		dataRow.addBlankCell();
+		dataRow.addBooleanCell(true);
+		
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(2013, 8, 10, 9, 0);
+		dataRow.addDateCell(calendar.getTime());
+		dataRow.addErrorCell((byte) 33);
+		dataRow.addNumericCell(33);
+		dataRow.addStringCell("Hello world!");
+		dataRow.addHyperlinkCell("Nasdanika", "https://docs.nasdanika.org");
+		
+		excelResource.save(null);
+
+		// Reading to a new resource set
+		resourceSet = new ResourceSetImpl();
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xlsx", new WorkbookResourceFactory(filters));
+		excelResource = resourceSet.getResource(URI.createFileURI(test.getAbsolutePath()), true);
+		for (EObject root: excelResource.getContents()) {
+			for (Sheet sheet: ((Workbook) root).getSheets()) {
+				System.out.println(sheet.getName() + " " + sheet.eClass().getName());
+				for (Row row: ((RowSheet) sheet).getRows()) {
+					System.out.println("\t" + row.getNumber() + " " + row.eClass().getName());
+					for (Cell cell: ((CellRow) row).getCells()) {
+						System.out.println("\t\t" + cell.getColumnIndex() + " " + cell.eClass().getName());
+						if (cell instanceof StringCell) {
+							System.out.println("\t\t\t" + ((StringCell) cell).getValue());
+						}
+					}					
+				}
+			}
+		}		
 	}
 	
 	
