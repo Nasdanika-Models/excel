@@ -27,8 +27,7 @@ public class WorkbookResourceFactory extends ResourceFactoryImpl {
 	public WorkbookResourceFactory(Collection<ResourceContentsFilter> filters) {
 		this.filters = filters;
 	}
-	
-	
+		
 	@Override
 	public Resource createResource(URI uri) {
 		return new ContentsFilteringResource(uri, filters) {
