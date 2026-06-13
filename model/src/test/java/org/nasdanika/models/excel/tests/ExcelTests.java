@@ -377,21 +377,21 @@ public class ExcelTests {
 			public List<EObject> load(
 					Resource resource, 
 					List<EObject> contents, 
-					String qualifier,
+					String[] qualifiers,
 					int qualifierPosition, Map<?, ?> options) throws IOException {
 				
-				System.out.println("Filter1 load: " + qualifier + " " + qualifierPosition);				
-				return ResourceContentsFilter.super.load(resource, contents, qualifier, qualifierPosition, options);
+				System.out.println("Filter1 load: " + qualifiers[qualifierPosition] + " " + qualifierPosition);				
+				return ResourceContentsFilter.super.load(resource, contents, qualifiers, qualifierPosition, options);
 			}
 			
 			@Override
 			public List<EObject> save(
 					Resource resource, 
 					List<EObject> contents, 
-					String qualifier,
+					String[] qualifiers,
 					int qualifierPosition, Map<?, ?> options) throws IOException {
-				System.out.println("Filter1 save: " + qualifier + " " + qualifierPosition);				
-				return ResourceContentsFilter.super.save(resource, contents, qualifier, qualifierPosition, options);
+				System.out.println("Filter1 save: " + qualifiers[qualifierPosition] + " " + qualifierPosition);				
+				return ResourceContentsFilter.super.save(resource, contents, qualifiers, qualifierPosition, options);
 			}
 						
 		};
@@ -407,21 +407,21 @@ public class ExcelTests {
 			public List<EObject> load(
 					Resource resource, 
 					List<EObject> contents, 
-					String qualifier,
+					String[] qualifiers,
 					int qualifierPosition, Map<?, ?> options) throws IOException {
 				
-				System.out.println("Filter2 load: " + qualifier + " " + qualifierPosition);				
-				return ResourceContentsFilter.super.load(resource, contents, qualifier, qualifierPosition, options);
+				System.out.println("Filter2 load: " + qualifiers[qualifierPosition] + " " + qualifierPosition);				
+				return ResourceContentsFilter.super.load(resource, contents, qualifiers, qualifierPosition, options);
 			}
 			
 			@Override
 			public List<EObject> save(
 					Resource resource, 
 					List<EObject> contents, 
-					String qualifier,
+					String[] qualifiers,
 					int qualifierPosition, Map<?, ?> options) throws IOException {
-				System.out.println("Filter2 save: " + qualifier + " " + qualifierPosition);				
-				return ResourceContentsFilter.super.save(resource, contents, qualifier, qualifierPosition, options);
+				System.out.println("Filter2 save: " + qualifiers[qualifierPosition] + " " + qualifierPosition);				
+				return ResourceContentsFilter.super.save(resource, contents, qualifiers, qualifierPosition, options);
 			}
 			
 		};
