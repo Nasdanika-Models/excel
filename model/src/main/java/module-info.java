@@ -1,6 +1,10 @@
 import org.nasdanika.capability.CapabilityFactory;
+import org.nasdanika.models.excel.util.CSVArrayResourceContentHandlerCapabilityFactory;
+import org.nasdanika.models.excel.util.CSVResourceContentHandlerCapabilityFactory;
 import org.nasdanika.models.excel.util.CsvResourceFactoryCapabilityFactory;
 import org.nasdanika.models.excel.util.ExcelEPackageResourceSetCapabilityFactory;
+import org.nasdanika.models.excel.util.WorkbookArrayResourceContentHandlerCapabilityFactory;
+import org.nasdanika.models.excel.util.WorkbookResourceContentHandlerCapabilityFactory;
 import org.nasdanika.models.excel.util.WorkbookResourceFactoryCapabilityFactory;
 
 module org.nasdanika.models.excel {
@@ -17,5 +21,9 @@ module org.nasdanika.models.excel {
 	provides CapabilityFactory with 
 		ExcelEPackageResourceSetCapabilityFactory,
 		WorkbookResourceFactoryCapabilityFactory,
+		WorkbookArrayResourceContentHandlerCapabilityFactory,
+		WorkbookResourceContentHandlerCapabilityFactory,
+		CSVArrayResourceContentHandlerCapabilityFactory,
+		CSVResourceContentHandlerCapabilityFactory,
 		CsvResourceFactoryCapabilityFactory;
 }

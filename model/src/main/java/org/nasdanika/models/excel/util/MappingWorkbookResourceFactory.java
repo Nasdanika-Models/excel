@@ -15,8 +15,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.nasdanika.capability.emf.ResourceContentsFilter;
+import org.nasdanika.capability.CapabilityLoader;
+import org.nasdanika.capability.emf.ContentsHandlingResourceFactory;
 import org.nasdanika.common.DefaultConverter;
+import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.Util;
 import org.nasdanika.exec.content.ContentFactory;
 import org.nasdanika.exec.content.Interpolator;
@@ -36,10 +38,10 @@ import org.nasdanika.models.excel.Workbook;
 /**
  * Populates the root object my mapping cells and sheets to features.
  */
-public abstract class MappingWorkbookResourceFactory extends WorkbookResourceFactory {
+public abstract class MappingWorkbookResourceFactory extends ContentsHandlingResourceFactory {
 
-	public MappingWorkbookResourceFactory(Collection<ResourceContentsFilter> filters) {
-		super(filters);
+	public MappingWorkbookResourceFactory(CapabilityLoader capabilityLoader, ProgressMonitor progressMonitor) {
+		super(capabilityLoader, progressMonitor);
 	}
 
 	/**

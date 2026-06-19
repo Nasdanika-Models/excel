@@ -1,11 +1,8 @@
 package org.nasdanika.models.excel.util;
 
-import java.util.List;
-
 import org.eclipse.emf.ecore.resource.Resource.Factory;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.nasdanika.capability.ServiceCapabilityFactory;
-import org.nasdanika.capability.emf.ResourceContentsFilter;
+import org.nasdanika.capability.emf.ContentsHandlingResourceFactory;
 import org.nasdanika.capability.emf.ResourceFactoryCapabilityFactory;
 import org.nasdanika.common.ProgressMonitor;
 
@@ -17,9 +14,7 @@ public class WorkbookResourceFactoryCapabilityFactory extends ResourceFactoryCap
 			Loader loader,
 			ProgressMonitor progressMonitor) {
 		
-		Requirement<Object, ResourceContentsFilter> resourceContentsFilterRequirement = ServiceCapabilityFactory.createRequirement(ResourceContentsFilter.class);		
-		List<ResourceContentsFilter> filters = loader.getCapabilityLoader().loadAll(resourceContentsFilterRequirement, progressMonitor);
-		return new WorkbookResourceFactory(filters);
+		return new ContentsHandlingResourceFactory(loader.getCapabilityLoader(), progressMonitor);
 	}
 	
 	@Override
