@@ -6,17 +6,17 @@ import java.io.OutputStream;
 import java.util.Map;
 import java.util.concurrent.CompletionStage;
 
-import org.eclipse.emf.ecore.EObject;
 import org.nasdanika.capability.CapabilityProvider;
 import org.nasdanika.capability.ServiceCapabilityFactory;
 import org.nasdanika.capability.emf.ResourceContentsHandler;
+import org.nasdanika.capability.emf.ResourceEObjectContentsHandler;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.models.excel.Workbook;
 
 /**
  * Provides an {@link OpenAIClient} instance.  
  */
-public class CSVArrayResourceContentHandlerCapabilityFactory extends ServiceCapabilityFactory<org.nasdanika.capability.emf.ResourceContentsHandler.Requirement, ResourceContentsHandler<EObject[]>> {
+public class WorkbookResourceContentsHandlerCapabilityFactory extends ServiceCapabilityFactory<org.nasdanika.capability.emf.ResourceContentsHandler.Requirement, ResourceContentsHandler<Workbook>> {
 
 	@Override
 	public boolean isFor(Class<?> type, Object serviceRequirement) {
@@ -26,19 +26,19 @@ public class CSVArrayResourceContentHandlerCapabilityFactory extends ServiceCapa
 	}
 
 	private boolean match(org.nasdanika.capability.emf.ResourceContentsHandler.Requirement handlerRequirement) {
-		return EObject[].class.equals(handlerRequirement.getContentsType())
+		return Workbook.class.equals(handlerRequirement.getContentsType())
 				&& handlerRequirement.getQualifierIndex() == 0
-				&& "csv".equalsIgnoreCase(handlerRequirement.getQualifiers()[0]);
+				&& "xlsx".equalsIgnoreCase(handlerRequirement.getQualifiers()[0]);
 	}
 
 	@Override
-	protected CompletionStage<Iterable<CapabilityProvider<ResourceContentsHandler<EObject[]>>>> createService(
-			Class<ResourceContentsHandler<EObject[]>> serviceType, 
+	protected CompletionStage<Iterable<CapabilityProvider<ResourceContentsHandler<Workbook>>>> createService(
+			Class<ResourceContentsHandler<Workbook>> serviceType, 
 			org.nasdanika.capability.emf.ResourceContentsHandler.Requirement serviceRequirement, 
 			final Loader loader,
 			ProgressMonitor progressMonitor) {
 		
-		ResourceContentsHandler<EObject[]> workbookHandler = new ResourceContentsHandler<EObject[]>() {
+		ResourceContentsHandler<Workbook> workbookHandler = new ResourceEObjectContentsHandler<Workbook>() {
 
 			@Override
 			public Order getOrder() {
@@ -46,15 +46,15 @@ public class CSVArrayResourceContentHandlerCapabilityFactory extends ServiceCapa
 			}
 
 			@Override
-			public EObject[] load(InputStream inputStream, Map<?, ?> options) throws IOException {
-				CSVLoader workbookLoader = new CSVLoader();
-				return new EObject[] { workbookLoader.load(inputStream) };
+			public Workbook load(InputStream inputStream, Map<?, ?> options) throws IOException {
+				XSSWorkbookLoader workbookLoader = new XSSWorkbookLoader();
+				return workbookLoader.load(inputStream);
 			}
 
 			@Override
-			public void save(EObject[] contents, OutputStream outputStream, Map<?, ?> options) throws IOException {
-				CSVSaver saver = new CSVSaver();
-				saver.save((Workbook) contents[0], outputStream);
+			public void save(Workbook contents, OutputStream outputStream, Map<?, ?> options) throws IOException {
+				XSSWorkbookSaver saver = new XSSWorkbookSaver();
+				saver.save(contents, outputStream);
 			}
 			
 		};

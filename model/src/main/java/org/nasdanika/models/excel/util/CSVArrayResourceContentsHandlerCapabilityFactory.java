@@ -16,7 +16,7 @@ import org.nasdanika.models.excel.Workbook;
 /**
  * Provides an {@link OpenAIClient} instance.  
  */
-public class WorkbookArrayResourceContentHandlerCapabilityFactory extends ServiceCapabilityFactory<org.nasdanika.capability.emf.ResourceContentsHandler.Requirement, ResourceContentsHandler<EObject[]>> {
+public class CSVArrayResourceContentsHandlerCapabilityFactory extends ServiceCapabilityFactory<org.nasdanika.capability.emf.ResourceContentsHandler.Requirement, ResourceContentsHandler<EObject[]>> {
 
 	@Override
 	public boolean isFor(Class<?> type, Object serviceRequirement) {
@@ -28,7 +28,7 @@ public class WorkbookArrayResourceContentHandlerCapabilityFactory extends Servic
 	private boolean match(org.nasdanika.capability.emf.ResourceContentsHandler.Requirement handlerRequirement) {
 		return EObject[].class.equals(handlerRequirement.getContentsType())
 				&& handlerRequirement.getQualifierIndex() == 0
-				&& "xlsx".equalsIgnoreCase(handlerRequirement.getQualifiers()[0]);
+				&& "csv".equalsIgnoreCase(handlerRequirement.getQualifiers()[0]);
 	}
 
 	@Override
@@ -47,13 +47,13 @@ public class WorkbookArrayResourceContentHandlerCapabilityFactory extends Servic
 
 			@Override
 			public EObject[] load(InputStream inputStream, Map<?, ?> options) throws IOException {
-				XSSWorkbookLoader workbookLoader = new XSSWorkbookLoader();
+				CSVLoader workbookLoader = new CSVLoader();
 				return new EObject[] { workbookLoader.load(inputStream) };
 			}
 
 			@Override
 			public void save(EObject[] contents, OutputStream outputStream, Map<?, ?> options) throws IOException {
-				XSSWorkbookSaver saver = new XSSWorkbookSaver();
+				CSVSaver saver = new CSVSaver();
 				saver.save((Workbook) contents[0], outputStream);
 			}
 			

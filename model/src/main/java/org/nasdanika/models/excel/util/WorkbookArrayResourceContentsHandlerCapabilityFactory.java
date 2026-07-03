@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import java.util.Map;
 import java.util.concurrent.CompletionStage;
 
+import org.eclipse.emf.ecore.EObject;
 import org.nasdanika.capability.CapabilityProvider;
 import org.nasdanika.capability.ServiceCapabilityFactory;
 import org.nasdanika.capability.emf.ResourceContentsHandler;
@@ -15,7 +16,7 @@ import org.nasdanika.models.excel.Workbook;
 /**
  * Provides an {@link OpenAIClient} instance.  
  */
-public class WorkbookResourceContentHandlerCapabilityFactory extends ServiceCapabilityFactory<org.nasdanika.capability.emf.ResourceContentsHandler.Requirement, ResourceContentsHandler<Workbook>> {
+public class WorkbookArrayResourceContentsHandlerCapabilityFactory extends ServiceCapabilityFactory<org.nasdanika.capability.emf.ResourceContentsHandler.Requirement, ResourceContentsHandler<EObject[]>> {
 
 	@Override
 	public boolean isFor(Class<?> type, Object serviceRequirement) {
@@ -25,19 +26,19 @@ public class WorkbookResourceContentHandlerCapabilityFactory extends ServiceCapa
 	}
 
 	private boolean match(org.nasdanika.capability.emf.ResourceContentsHandler.Requirement handlerRequirement) {
-		return Workbook.class.equals(handlerRequirement.getContentsType())
+		return EObject[].class.equals(handlerRequirement.getContentsType())
 				&& handlerRequirement.getQualifierIndex() == 0
 				&& "xlsx".equalsIgnoreCase(handlerRequirement.getQualifiers()[0]);
 	}
 
 	@Override
-	protected CompletionStage<Iterable<CapabilityProvider<ResourceContentsHandler<Workbook>>>> createService(
-			Class<ResourceContentsHandler<Workbook>> serviceType, 
+	protected CompletionStage<Iterable<CapabilityProvider<ResourceContentsHandler<EObject[]>>>> createService(
+			Class<ResourceContentsHandler<EObject[]>> serviceType, 
 			org.nasdanika.capability.emf.ResourceContentsHandler.Requirement serviceRequirement, 
 			final Loader loader,
 			ProgressMonitor progressMonitor) {
 		
-		ResourceContentsHandler<Workbook> workbookHandler = new ResourceContentsHandler<Workbook>() {
+		ResourceContentsHandler<EObject[]> workbookHandler = new ResourceContentsHandler<EObject[]>() {
 
 			@Override
 			public Order getOrder() {
@@ -45,15 +46,15 @@ public class WorkbookResourceContentHandlerCapabilityFactory extends ServiceCapa
 			}
 
 			@Override
-			public Workbook load(InputStream inputStream, Map<?, ?> options) throws IOException {
+			public EObject[] load(InputStream inputStream, Map<?, ?> options) throws IOException {
 				XSSWorkbookLoader workbookLoader = new XSSWorkbookLoader();
-				return workbookLoader.load(inputStream);
+				return new EObject[] { workbookLoader.load(inputStream) };
 			}
 
 			@Override
-			public void save(Workbook contents, OutputStream outputStream, Map<?, ?> options) throws IOException {
+			public void save(EObject[] contents, OutputStream outputStream, Map<?, ?> options) throws IOException {
 				XSSWorkbookSaver saver = new XSSWorkbookSaver();
-				saver.save(contents, outputStream);
+				saver.save((Workbook) contents[0], outputStream);
 			}
 			
 		};
